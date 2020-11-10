@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <title>JUK JUK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet">
+    <style>
+        #restaurant {
+            color: black;
+            font-family: 'Mitr', sans-serif;
+            font-size: larger;
+        }
+
+        #line_name {
+            font-family: 'Mitr', sans-serif;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 14px;
+            color: #848282;
+        }
+
+
+        #menu {
+            font-family: 'Mitr', sans-serif;
+            text-align: left;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .food {
+            width: 140px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        #price {
+            font-family: 'Mitr', sans-serif;
+            font-size: 14px;
+        }
+
+        #orderBttn {
+            font-family: 'Mitr', sans-serif;
+        }
+
+        .block {
+            display: block;
+            width: 100%;
+            border: 9px;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #bank-head {
+            font-family: 'Mitr', sans-serif;
+            text-align: left;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        #bank-detail {
+            font-family: 'Mitr', sans-serif;
+            text-align: left;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+    <div class="container mt=20">
+
+        <h1 id="restaurant">สถานที่จัดส่ง</h1>
+
+
+        <form>
+            <label for="fname">ชื่อ</label>
+            <input type="text" id="fname" name="fname">
+            <label for="lname">สถานที่</label>
+            <input type="text" id="lname" name="lname">
+            <label for="fname">เบอร์ติดต่อ</label>
+            <input type="text" id="fname" name="fname">
+            <label for="lname">หมายเหตุ</label>
+            <input type="text" id="lname" name="lname">
+          </form>
+
+    </div>
+
+    <div class="container">
+
+    </div>
+    <div class="container">
+
+        <div class="row">
+
+            <button type="button" class="block" id="orderBttn">
+                <p id="bank-head">เสร็จสิ้น</p>
+            </button>
+
+        </div>
+
+
+    </div>
+
+    <script>
+        async function main() {
+
+            await liff.init({ liffId: "1655215015-V58PdOrL" })
+
+        }
+
+        main()
+    </script>
+
+</body>
+
+</html>
