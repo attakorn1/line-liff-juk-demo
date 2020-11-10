@@ -16,12 +16,11 @@
     <style>
         #restaurant {
             color: black;
-            font-family: 'Mitr', sans-serif;
             font-size: larger;
         }
 
         #line_name {
-            font-family: 'Mitr', sans-serif;
+
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
@@ -29,28 +28,84 @@
             color: #848282;
         }
 
-
         #menu {
-            font-family: 'Mitr', sans-serif;
             text-align: left;
             font-style: normal;
             font-weight: bold;
-            font-size: 16px;
-        }
-
-        .food {
-            width: 140px;
-            height: 100px;
-            object-fit: cover;
-        }
-
-        #price {
-            font-family: 'Mitr', sans-serif;
             font-size: 14px;
         }
 
-        #orderBttn {
+        #price {
+            font-size: 12px;
+        }
+
+        img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        body {
+            padding: 0px;
+            padding-top: 15px;
+            min-height: 100%;
+            display: grid;
+            grid-template-rows: 1fr auto;
             font-family: 'Mitr', sans-serif;
+        }
+
+        footer {
+            background: white;
+            color: white;
+            padding: 5px;
+            font-weight: 800;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        #orderBttn {
+
+            font-size: 12px;
+            color: black;
+            font-weight: 500;
+            background-color: #FFDB01;
+            border: none;
+            padding: 5px;
+            border-radius: 12px;
+        }
+
+        #footerNextBttn {
+
+            justify-content: center;
+            background-color: #FFDB01;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            margin: 4px 2px;
+            width: 100%;
+
+        }
+
+        #footerBackBttn {
+            justify-content: center;
+            background-color: #FFDB01;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            margin: 4px 2px;
+            width: 100%;
+
         }
     </style>
 
@@ -74,14 +129,14 @@
 
                 <div class="row">
                     <div class="col-1.5">
-                        <img src="images/กะเพราหมูกรอบ.jpg" class="rounded food" alt="กะเพราหมูกรอบ">
+                        <img src="images/กะเพราหมูกรอบ.jpg" class="rounded" alt="กะเพราหมูกรอบ">
                     </div>
                     <div class="col">
                         <p id="menu">กะเพราหมูกรอบ</p>
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-warning" id="orderBttn">สั่งเลย</button>
+                        <button type="button" class="btn btn-warning" id="orderBttn">+ สั่งเลย</button>
                     </div>
                 </div>
 
@@ -89,14 +144,14 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-1.5">
-                        <img src="images/ข้าวผัดกุ้ง.jpg" class="rounded food" alt="ข้าวผัดกุ้ง">
+                        <img src="images/ข้าวผัดกุ้ง.jpg" class="rounded" alt="ข้าวผัดกุ้ง">
                     </div>
                     <div class="col">
                         <p id="menu">ข้าวผัดกุ้ง</p>
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-warning" id="orderBttn">สั่งเลย</button>
+                        <button type="button" class="btn btn-warning" id="orderBttn">+ สั่งเลย</button>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend" id="inputGroup-sizing-sm">
 
@@ -114,14 +169,14 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-1.5">
-                        <img src="images/แกงจืดเต้าหู้.jpg" class="rounded food" alt="แกงจืดเต้าหู้">
+                        <img src="images/แกงจืดเต้าหู้.jpg" class="rounded" alt="แกงจืดเต้าหู้">
                     </div>
                     <div class="col">
                         <p id="menu">แกงจืดเต้าหู้</p>
                         <p id="price">70 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-warning" id="orderBttn">สั่งเลย</button>
+                        <button type="button" class="btn btn-warning" id="orderBttn">+ สั่งเลย</button>
                     </div>
                 </div>
 
@@ -129,14 +184,14 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-1.5">
-                        <img src="images/ต้มยำกุ้ง.jpg" class="rounded food" alt="ต้มยำกุ้ง">
+                        <img src="images/ต้มยำกุ้ง.jpg" class="rounded" alt="ต้มยำกุ้ง">
                     </div>
                     <div class="col">
                         <p id="menu">ต้มยำกุ้ง</p>
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-warning" id="orderBttn">สั่งเลย</button>
+                        <button type="button" class="btn btn-warning" id="orderBttn">+ สั่งเลย</button>
                     </div>
                 </div>
 
@@ -144,14 +199,14 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-1.5">
-                        <img src="images/ผัดผักรวม.jpg" class="rounded food" alt="ผัดผักรวม">
+                        <img src="images/ผัดผักรวม.jpg" class="rounded" alt="ผัดผักรวม">
                     </div>
                     <div class="col">
                         <p id="menu">ผัดผักรวมมิตร</p>
                         <p id="price">70 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-warning" id="orderBttn">สั่งเลย</button>
+                        <button type="button" class="btn btn-warning" id="orderBttn">+ สั่งเลย</button>
                     </div>
                 </div>
 
@@ -161,20 +216,26 @@
 
         </ul>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-3">
-                <button type="button" class="btn btn-primary">
-                    < </button>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <button type="button" class="btn btn-primary" id="footerBackBttn">
+                        < </button>
+                </div>
+                <div class="col-9">
+                    <button type="button" class="btn btn-primary" id="footerNextBttn">สรุปรายการ</button>
+                </div>
+
+
             </div>
-            <div class="col">
-                <button type="button" class="btn btn-primary" id="orderBttn">สรุปรายการ</button>
-            </div>
+
+
         </div>
+    </footer>
 
-
-    </div>
-
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script>
         async function main() {
 
@@ -184,7 +245,7 @@
 
         main()
     </script>
-
 </body>
+
 
 </html>
