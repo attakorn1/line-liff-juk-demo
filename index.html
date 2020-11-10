@@ -5,147 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-    <title>JUK JUK</title>
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <style>
-        #restaurant {
-            color: black;
-            font-size: larger;
-        }
 
-        #line_name {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: normal;
-            font-size: 12px;
-            line-height: 14px;
-            color: #848282;
-        }
-
-        #menu {
-            font-family: Roboto;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        #price {
-            font-size: 14px;
-        }
-
-        .food {
-            width: 100px;
-            height: 100px;
-            object-fit: cover
-    </style>
+    <link rel="stylesheet" href="/css/foodOrder.css">
+    <title>JUK JUK</title>
 </head>
 
 <body>
-    <div class="container">
 
-        <h1 id="restaurant">ตามสั่งป้าแจ๋วตึก A
-            <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span>
-        </h1>
-        <h2 id="line_name">By jaewjaew</h2>
+    <!-- <section class="min-vh-100 bg light"> -->
 
-    </div>
+        <div class="container mt=20" >
 
-    <div class="container">
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+            <h1 id="restaurant">ตามสั่งป้าแจ๋วตึก A
+                <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span>
+            </h1>
+            <h2 id="line_name">By jaewjaew</h2>
 
-                <div class="row">
-                    <div class="col">
-                        <img src="images/กะเพราหมูกรอบ.jpg" class="rounded food" alt="กะเพราหมูกรอบ">
-                    </div>
-                    <div class="col">
-                        <p id="menu">กะเพราหมูกรอบ</p>
-                        <p id="price">50 ฿</p>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-warning">สั่งเลย</button>
-                    </div>
-                </div>
-
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col">
-                        <img src="images/ข้าวผัดกุ้ง.jpg" class="rounded food" alt="ข้าวผัดกุ้ง">
-                    </div>
-                    <div class="col">
-                        <p id="menu">ข้าวผัดกุ้ง</p>
-                        <p id="price">50 ฿</p>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-warning">สั่งเลย</button>
-                    </div>
-
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col">
-                        <img src="images/แกงจืดเต้าหู้.jpg" class="rounded food" alt="แกงจืดเต้าหู้">
-                    </div>
-                    <div class="col">
-                        <p id="menu">แกงจืดเต้าหู้</p>
-                        <p id="price">70 ฿</p>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-warning">สั่งเลย</button>
-                    </div>
-                </div>
-
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col">
-                        <img src="images/ต้มยำกุ้ง.jpg" class="rounded food" alt="ต้มยำกุ้ง">
-                    </div>
-                    <div class="col">
-                        <p id="menu">ต้มยำกุ้ง</p>
-                        <p id="price">50 ฿</p>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-warning">สั่งเลย</button>
-                    </div>
-                </div>
-
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col">
-                        <img src="images/ผัดผักรวม.jpg" class="rounded food" alt="ผัดผักรวม">
-                    </div>
-                    <div class="col">
-                        <p id="menu">ผัดผักรวมมิตร</p>
-                        <p id="price">70 ฿</p>
-                    </div>
-                    <div class="col">
-                        <button type="button" class="btn btn-warning">สั่งเลย</button>
-                    </div>
-                </div>
-
-            </li>
-        </ul>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <button type="button" class="btn btn-primary">
-                    < </button>
-            </div>
-            <div class="col">
-                <button type="button" class="btn btn-primary">สรุปรายการ</button>
-            </div>
         </div>
 
+        <div class="container">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
 
-    </div>
+                    <div class="row mt-2">
+                        <div class="col-1.5">
+                            <img src="images/กะเพราหมูกรอบ.jpg" class="rounded food" alt="กะเพราหมูกรอบ">
+                        </div>
+                        <div class="col">
+                            <p id="menu">กะเพราหมูกรอบ</p>
+                            <p id="price">50 ฿</p>
+                        </div>
+                        <div class="col-1.5">
+                            <button type="button" class="btn btn-warning">สั่งเลย</button>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/ข้าวผัดกุ้ง.jpg" class="rounded food" alt="ข้าวผัดกุ้ง">
+                        </div>
+                        <div class="col">
+                            <p id="menu">ข้าวผัดกุ้ง</p>
+                            <p id="price">50 ฿</p>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-warning">สั่งเลย</button>
+                        </div>
+
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/แกงจืดเต้าหู้.jpg" class="rounded food" alt="แกงจืดเต้าหู้">
+                        </div>
+                        <div class="col">
+                            <p id="menu">แกงจืดเต้าหู้</p>
+                            <p id="price">70 ฿</p>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-warning">สั่งเลย</button>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/ต้มยำกุ้ง.jpg" class="rounded food" alt="ต้มยำกุ้ง">
+                        </div>
+                        <div class="col">
+                            <p id="menu">ต้มยำกุ้ง</p>
+                            <p id="price">50 ฿</p>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-warning">สั่งเลย</button>
+                        </div>
+                    </div>
+
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col">
+                            <img src="images/ผัดผักรวม.jpg" class="rounded food" alt="ผัดผักรวม">
+                        </div>
+                        <div class="col">
+                            <p id="menu">ผัดผักรวมมิตร</p>
+                            <p id="price">70 ฿</p>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-warning">สั่งเลย</button>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <button type="button" class="btn btn-primary">
+                        < </button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary">สรุปรายการ</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    <!-- </section> -->
+
+
     <script>
         async function main() {
             await liff.init({ liffId: "1655215015-V58PdOrL" })
