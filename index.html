@@ -13,10 +13,22 @@
     <title>JUK JUK</title>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet">
     <style>
-        #restaurant {
+        #topic {
             color: black;
             font-size: larger;
             font-weight: bold;
+            background-color: #FFDB01;
+            border-radius: 15px;
+            padding: 10px;
+            background-size: 20%;
+        }
+
+        #topic-second {
+            color: black;
+            font-size: large;
+            font-weight: bold;
+            padding: 10px;
+            background-size: 20%;
         }
 
         .badge {
@@ -53,6 +65,12 @@
             object-fit: cover;
         }
 
+        .input-group {
+            position: relative;
+            display: table;
+            border-collapse: separate;
+        }
+
         body {
             padding: 0px;
             padding-top: 15px;
@@ -65,14 +83,15 @@
         footer {
             background: white;
             color: white;
-
-            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             font-weight: 900;
             font-family: 'Mitr', sans-serif;
             position: -webkit-sticky;
             position: sticky;
             bottom: 0;
             left: 0;
+
 
             width: 100%;
         }
@@ -129,15 +148,24 @@
 <body>
 
 
-    <div class="container mt=20">
 
-        <h1 id="restaurant">ตามสั่งป้าแจ๋วตึก A
-            <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span>
-        </h1>
-        <p id="line_name">By jaewjaew</p>
-    </div>
 
     <div class="container">
+
+        <div class="container mt=20">
+            <div class="row">
+                <div class="col-1.5">
+                    <h1 id="topic">ตามสั่งป้าแจ๋วตึก A</h1>
+                </div>
+                <div class="col">
+                    <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span>
+                </div>
+            </div>
+            <div class="row">
+                <p id="line_name">By jaewjaew</p>
+            </div>
+        </div>
+
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
 
@@ -150,7 +178,8 @@
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+ สั่งเลย</button>
+                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                            สั่งเลย</button>
                     </div>
                 </div>
 
@@ -165,16 +194,19 @@
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+ สั่งเลย</button>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend" id="inputGroup-sizing-sm">
+                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                            สั่งเลย</button>
+
+                        <div class="input-group" id="numberAdjust">
+                            <div class="input-group-prepend" id="inputGroup-sizing-xs">
 
                                 <button class="btn btn-outline-secondary" type="button">-</button>
                             </div>
                             <input type="text" class="form-control" placeholder="" aria-label="small"
-                                aria-describedby="basic-addon1">
+                                aria-describedby="basic-addon1" id="numberOfOrder">
+                            <button class="btn btn-outline-secondary" type="button">+</button>
                         </div>
-                        <button class="btn btn-outline-secondary" type="button">+</button>
+
                     </div>
 
 
@@ -190,7 +222,8 @@
                         <p id="price">70 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+ สั่งเลย</button>
+                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                            สั่งเลย</button>
                     </div>
                 </div>
 
@@ -205,7 +238,8 @@
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+ สั่งเลย</button>
+                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                            สั่งเลย</button>
                     </div>
                 </div>
 
@@ -220,7 +254,8 @@
                         <p id="price">70 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+ สั่งเลย</button>
+                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                            สั่งเลย</button>
                     </div>
                 </div>
 
@@ -251,6 +286,19 @@
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script>
+
+        function addOrder() {
+            let buttonOrder = document.getElementById("orderBttn");
+            let inputGroup = document.getElementById("numberAdjust");
+            let orderNumber = document.getElementById("numberOfOrder");
+            if (buttonOrder.style.display === "none") {
+                inputGroup.style.display = "none";
+            } else {
+                buttonOrder.style.display = "none";
+            }
+        }
+
+
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
         document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
         async function main() {

@@ -13,10 +13,22 @@
     <title>JUK JUK</title>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet">
     <style>
-        #restaurant {
+        #topic {
             color: black;
             font-size: larger;
             font-weight: bold;
+            background-color: #FFDB01;
+            border-radius: 15px;
+            padding: 10px;
+            background-size: 20%;
+        }
+
+        #topic-second {
+            color: black;
+            font-size: large;
+            font-weight: bold;
+            padding: 10px;
+            background-size: 20%;
         }
 
         .badge {
@@ -65,8 +77,8 @@
         footer {
             background: white;
             color: white;
-
-            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             font-weight: 900;
             font-family: 'Mitr', sans-serif;
             position: -webkit-sticky;
@@ -129,24 +141,49 @@
 <body>
 
 
-    <div class="container mt=20">
 
-        <h1 id="restaurant">ยอดรวม 120 ฿</h1>
-
-        <p>เลขบัญชี: XXXXXXXXX < ให้กด copy เลขบัญชีเข้า clipboard ได้</p>
-                <p>ธนาคารกสิกรไทย</p>
-
-                <form>
-                    <div class="form-group">
-                        <label for="exampleFormControlFile1">เลือก Slip</label>
-                        <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                    </div>
-                </form>
-
-
-    </div>
 
     <div class="container">
+        <div class="container mt=20">
+    
+
+    
+    
+        </div>
+
+
+        <div class="container mt=20">
+
+            <div class="container mt=20">
+                <div class="row">
+                    <div class="col-1.5">
+                        <h1 id="topic">โอนเงินและส่ง Slip</h1>
+                    </div>
+                    <div class="col">
+                        <!-- <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <p id="topic-second">ยอดรวม 120 ฿</p>
+                </div>
+
+                <div class="row">
+                    <p>เลขบัญชี: XXXXXXXXX < ให้กด copy เลขบัญชีเข้า clipboard ได้</p>
+                    <p>ธนาคารกสิกรไทย</p>
+                </div>
+
+
+                <div class="row">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">เลือก Slip</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
 
     </div>
 

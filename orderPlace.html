@@ -13,10 +13,22 @@
     <title>JUK JUK</title>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet">
     <style>
-        #restaurant {
+        #topic {
             color: black;
             font-size: larger;
             font-weight: bold;
+            background-color: #FFDB01;
+            border-radius: 15px;
+            padding: 10px;
+            background-size: 20%;
+        }
+
+        #topic-second {
+            color: black;
+            font-size: large;
+            font-weight: bold;
+            padding: 10px;
+            background-size: 20%;
         }
 
         .badge {
@@ -65,8 +77,8 @@
         footer {
             background: white;
             color: white;
-
-            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             font-weight: 900;
             font-family: 'Mitr', sans-serif;
             position: -webkit-sticky;
@@ -127,33 +139,52 @@
 
 <body>
 
+    <div class="container">
 
-    <div class="container mt=20">
+        <div class="container mt=20">
 
-        <h1 id="restaurant">สถานที่จัดส่ง</h1>
-
-
-        <form>
-            <div class="form-group">
-                <label for="nameBuyer">ชื่อ</label>
-                <input type="text" class="form-control" placeholder="ใส่ชื่อเรียก">
+            <div class="container mt=20">
+                <div class="row">
+                    <div class="col-1.5">
+                        <h1 id="topic">สถานที่จัดส่ง</h1>
+                    </div>
+                    <div class="col">
+                        <!-- <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span> -->
+                    </div>
+                </div>
 
             </div>
-            <div class="form-group">
-                <label for="placeBuyer">สถานที่นัดรับ</label>
-                <input type="text" class="form-control" placeholder="เช่น บ้านเลขที่ หรือ ส่วนกลาง">
-            </div>
-            <div class="form-group">
-                <label for="placeBuyer">เบอร์ติดต่อ</label>
-                <input type="number" class="form-control" placeholder="0123456789">
-            </div>
-            <div class="form-group">
-                <label for="placeBuyer">หมายเหตุ</label>
-                <input type="text" class="form-control" placeholder="ฝากบอกถึงคนขาย">
-            </div>
-        </form>
+        </div>
+
+
+        <div class="container mt=20">
+
+
+            <form>
+                <div class="form-group">
+                    <label for="nameBuyer">ชื่อ</label>
+                    <input type="text" class="form-control" placeholder="ใส่ชื่อเรียก">
+
+                </div>
+                <div class="form-group">
+                    <label for="placeBuyer">สถานที่นัดรับ</label>
+                    <input type="text" class="form-control" placeholder="เช่น บ้านเลขที่ หรือ ส่วนกลาง">
+                </div>
+                <div class="form-group">
+                    <label for="placeBuyer">เบอร์ติดต่อ</label>
+                    <input type="tel" class="form-control" placeholder="012-3456789">
+                </div>
+                <div class="form-group">
+                    <label for="placeBuyer">หมายเหตุ</label>
+                    <input type="text" class="form-control" placeholder="ฝากบอกถึงคนขาย">
+                </div>
+            </form>
+
+        </div>
 
     </div>
+
+
 
 
     <footer class="footer">

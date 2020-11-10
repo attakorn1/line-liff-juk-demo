@@ -13,12 +13,22 @@
     <title>JUK JUK</title>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet">
     <style>
-        #restaurant {
+        #topic {
             color: black;
             font-size: larger;
             font-weight: bold;
+            background-color: #FFDB01;
+            border-radius: 15px;
+            padding: 10px;
+            background-size: 20%;
         }
-
+        #topic-second {
+            color: black;
+            font-size: large;
+            font-weight: bold;
+            padding: 10px;
+            background-size: 20%;
+        }
         .badge {
             font-size: 10px;
             vertical-align: top;
@@ -65,8 +75,8 @@
         footer {
             background: white;
             color: white;
-
-            padding-bottom: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
             font-weight: 900;
             font-family: 'Mitr', sans-serif;
             position: -webkit-sticky;
@@ -128,26 +138,27 @@
 
 <body>
 
-
-    <div class="container mt=20">
-
-        <h1 id="restaurant">สรุปรายการ</h1>
-        <p>ตามสั่งป้าแจ๋วตึก A</p>
-        <p id="line_name">By jaewjaew</p>
-
-    </div>
-
- 
-
-
-
-
-
-
-
-
-
     <div class="container">
+        <div class="container mt=20">
+
+            <div class="container mt=20">
+                <div class="row">
+                    <div class="col-1.5">
+                        <h1 id="topic">สรุปรายการ</h1>
+                    </div>
+                    <div class="col">
+                        <!-- <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span> -->
+                    </div>
+                </div>
+                <div class="row">
+                    <p id="topic-second">ตามสั่งป้าแจ๋วตึก A</p>
+                </div>
+                <div class="row">
+                    <p id="line_name">By jaewjaew</p>
+                </div>
+            </div>
+        </div>
+
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
 
@@ -223,7 +234,7 @@
                         < </button>
                 </div>
                 <div class="col-9">
-                    <button type="button" class="btn btn-primary" id="footerNextBttn">ชำระเงิน</button>
+                    <!-- <button type="button" class="btn btn-primary" id="footerNextBttn" >ชำระเงิน</button> -->
                 </div>
 
 
