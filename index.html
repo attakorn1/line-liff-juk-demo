@@ -241,6 +241,7 @@
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script>
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
+        document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
         async function main() {
 
             await liff.init({ liffId: "1655215015-V58PdOrL" })
