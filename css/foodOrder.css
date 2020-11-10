@@ -12,6 +12,12 @@
          url('../fonts/roboto-v20-latin-regular.svg#Roboto') format('svg'); /* Legacy iOS */
   }
 
+.food {
+    width: 100px;
+     height: 100px;
+     /* object-fit: cover; */
+}
+
 #restaurant {
     color: black;
     font-size: larger;
