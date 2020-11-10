@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -16,12 +15,18 @@
     <style>
         #restaurant {
             color: black;
-            font-family: 'Mitr', sans-serif;
             font-size: larger;
+            font-weight: bold;
+        }
+
+        .badge {
+            font-size: 10px;
+            vertical-align: top;
+            position: relative;
         }
 
         #line_name {
-            font-family: 'Mitr', sans-serif;
+
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
@@ -29,65 +34,95 @@
             color: #848282;
         }
 
-
         #menu {
-            font-family: 'Mitr', sans-serif;
             text-align: left;
             font-style: normal;
             font-weight: bold;
-            font-size: 16px;
-        }
-
-        .food {
-            width: 140px;
-            height: 100px;
-            object-fit: cover;
+            font-size: 14px;
+            margin-top: 2px;
         }
 
         #price {
+            font-size: 12px;
+            text-align: start;
+        }
+
+        img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        body {
+            padding: 0px;
+            padding-top: 15px;
+            min-height: 100%;
+            display: grid;
+            grid-template-rows: 1fr auto;
             font-family: 'Mitr', sans-serif;
-            font-size: 14px;
+        }
+
+        footer {
+            background: white;
+            color: white;
+
+            padding-bottom: 10px;
+            font-weight: 900;
+            font-family: 'Mitr', sans-serif;
+            position: -webkit-sticky;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
         }
 
         #orderBttn {
-            font-family: 'Mitr', sans-serif;
-        }
 
-        .block {
-            display: block;
-            width: 100%;
-            border: 9px;
-            padding: 14px 28px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        #bank-head {
-            font-family: 'Mitr', sans-serif;
-            text-align: left;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-        }
-
-        #bank-detail {
-            font-family: 'Mitr', sans-serif;
-            text-align: left;
-            font-style: normal;
-            font-weight: bold;
             font-size: 12px;
+            color: black;
+            font-weight: 700;
+            background-color: #FFDB01;
+            border: none;
+            padding: 5px;
+            border-radius: 12px;
         }
 
-        input[type=text] {
+        #footerNextBttn {
+
+            justify-content: center;
+            background-color: #FFDB01;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            margin: 4px 2px;
             width: 100%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
+
+        }
+
+        #footerBackBttn {
+            justify-content: center;
+            background-color: #FFDB01;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            margin: 4px 2px;
+            width: 100%;
+
         }
     </style>
-
 </head>
 
 <body>
@@ -99,34 +134,47 @@
 
 
         <form>
-            <label for="fname">ชื่อ</label>
-            <input type="text" id="fname" name="fname">
-            <label for="lname">สถานที่</label>
-            <input type="text" id="lname" name="lname">
-            <label for="fname">เบอร์ติดต่อ</label>
-            <input type="text" id="fname" name="fname">
-            <label for="lname">หมายเหตุ</label>
-            <input type="text" id="lname" name="lname">
-          </form>
+            <div class="form-group">
+                <label for="nameBuyer">ชื่อ</label>
+                <input type="text" class="form-control" placeholder="ใส่ชื่อเรียก">
+
+            </div>
+            <div class="form-group">
+                <label for="placeBuyer">สถานที่นัดรับ</label>
+                <input type="text" class="form-control" placeholder="เช่น บ้านเลขที่ หรือ ส่วนกลาง">
+            </div>
+            <div class="form-group">
+                <label for="placeBuyer">เบอร์ติดต่อ</label>
+                <input type="number" class="form-control" placeholder="0123456789">
+            </div>
+            <div class="form-group">
+                <label for="placeBuyer">หมายเหตุ</label>
+                <input type="text" class="form-control" placeholder="ฝากบอกถึงคนขาย">
+            </div>
+        </form>
 
     </div>
 
-    <div class="container">
 
-    </div>
-    <div class="container">
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <button type="button" class="btn btn-primary" id="footerBackBttn">
+                        < </button>
+                </div>
+                <div class="col-9">
+                    <button type="button" class="btn btn-primary" id="footerNextBttn">เสร็จสิ้น</button>
+                </div>
 
-        <div class="row">
 
-            <button type="button" class="block" id="orderBttn">
-                <p id="bank-head">เสร็จสิ้น</p>
-            </button>
+            </div>
+
 
         </div>
+    </footer>
 
-
-    </div>
-
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script>
         async function main() {
 

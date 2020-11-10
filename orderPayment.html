@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -16,12 +15,18 @@
     <style>
         #restaurant {
             color: black;
-            font-family: 'Mitr', sans-serif;
             font-size: larger;
+            font-weight: bold;
+        }
+
+        .badge {
+            font-size: 10px;
+            vertical-align: top;
+            position: relative;
         }
 
         #line_name {
-            font-family: 'Mitr', sans-serif;
+
             font-style: normal;
             font-weight: normal;
             font-size: 12px;
@@ -29,57 +34,100 @@
             color: #848282;
         }
 
-
         #menu {
-            font-family: 'Mitr', sans-serif;
             text-align: left;
             font-style: normal;
             font-weight: bold;
-            font-size: 16px;
-        }
-
-        .food {
-            width: 140px;
-            height: 100px;
-            object-fit: cover;
+            font-size: 14px;
+            margin-top: 2px;
         }
 
         #price {
+            font-size: 12px;
+            text-align: start;
+        }
+
+        img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+        }
+
+        body {
+            padding: 0px;
+            padding-top: 15px;
+            min-height: 100%;
+            display: grid;
+            grid-template-rows: 1fr auto;
             font-family: 'Mitr', sans-serif;
-            font-size: 14px;
+        }
+
+        footer {
+            background: white;
+            color: white;
+
+            padding-bottom: 10px;
+            font-weight: 900;
+            font-family: 'Mitr', sans-serif;
+            position: -webkit-sticky;
+            position: sticky;
+            bottom: 0;
+            left: 0;
+
+            width: 100%;
         }
 
         #orderBttn {
-            font-family: 'Mitr', sans-serif;
-        }
 
-        .block {
-            display: block;
-            width: 100%;
-            border: 9px;
-            padding: 14px 28px;
-            font-size: 16px;
-            cursor: pointer;
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        #bank-head {
-            font-family: 'Mitr', sans-serif;
-            text-align: left;
-            font-style: normal;
-            font-weight: bold;
-            font-size: 16px;
-        }
-        #bank-detail {
-            font-family: 'Mitr', sans-serif;
-            text-align: left;
-            font-style: normal;
-            font-weight: bold;
             font-size: 12px;
+            color: black;
+            font-weight: 700;
+            background-color: #FFDB01;
+            border: none;
+            padding: 5px;
+            border-radius: 12px;
         }
 
+        #footerNextBttn {
 
+            justify-content: center;
+            background-color: #FFDB01;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            margin: 4px 2px;
+            width: 100%;
+
+        }
+
+        #footerBackBttn {
+            justify-content: center;
+            background-color: #FFDB01;
+            border-radius: 10px;
+            border: none;
+            color: black;
+            padding: 10px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+
+            margin: 4px 2px;
+            width: 100%;
+
+        }
+
+        #paymentMethodBttn {
+            width: 80%;
+            text-align: center;
+            position: relative;
+        }
     </style>
 
 </head>
@@ -95,20 +143,22 @@
 
     </div>
 
-    <div class="container">
 
-    </div>
-    <div class="container">
+
+
+    <div class="container py-4 bg-light">
         <div class="row">
 
-            <button type="button" class="block">
-                <p id="bank-head">โอนจ่ายบัญชีร้านค้าและส่ง Slip โอนเงิน</p>
+            <button type="button" class="block" id="paymentMethodBttn">
+                <p id="bank-head">โอนเงินและส่ง Slip</p>
             </button>
+
+
 
         </div>
         <div class="row">
 
-            <button type="button" class="block" id="orderBttn">
+            <button type="button" class="block" id="paymentMethodBttn">
                 <p id="bank-head">จ่ายด้วยเงินสด</p>
             </button>
 
@@ -117,6 +167,7 @@
 
     </div>
 
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script>
         async function main() {
 
