@@ -33,10 +33,12 @@
             font-style: normal;
             font-weight: bold;
             font-size: 14px;
+            margin-top: 2px;
         }
 
         #price {
             font-size: 12px;
+            text-align: start;
         }
 
         img {
@@ -238,6 +240,7 @@
 
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script>
+        document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
         async function main() {
 
             await liff.init({ liffId: "1655215015-V58PdOrL" })
