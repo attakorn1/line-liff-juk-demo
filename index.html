@@ -14,8 +14,6 @@
     <title>JUK JUK</title>
 
     <style>
-
-
         #restaurant {
             color: black;
             font-size: larger;
@@ -40,7 +38,7 @@
         }
 
         .food {
-            width: 120px;
+            width: 140px;
             height: 100px;
             object-fit: cover;
         }
@@ -54,7 +52,6 @@
 
 <body>
 
-    <!-- <section class="min-vh-100 bg light"> -->
 
     <div class="container mt=20">
 
@@ -69,7 +66,7 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
 
-                <div class="row mt-2">
+                <div class="row">
                     <div class="col-1.5">
                         <img src="images/กะเพราหมูกรอบ.jpg" class="rounded food" alt="กะเพราหมูกรอบ">
                     </div>
@@ -85,14 +82,14 @@
             </li>
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1.5">
                         <img src="images/ข้าวผัดกุ้ง.jpg" class="rounded food" alt="ข้าวผัดกุ้ง">
                     </div>
                     <div class="col">
                         <p id="menu">ข้าวผัดกุ้ง</p>
                         <p id="price">50 ฿</p>
                     </div>
-                    <div class="col">
+                    <div class="col-1.5">
                         <button type="button" class="btn btn-warning">สั่งเลย</button>
                     </div>
 
@@ -100,14 +97,14 @@
             </li>
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1.5">
                         <img src="images/แกงจืดเต้าหู้.jpg" class="rounded food" alt="แกงจืดเต้าหู้">
                     </div>
                     <div class="col">
                         <p id="menu">แกงจืดเต้าหู้</p>
                         <p id="price">70 ฿</p>
                     </div>
-                    <div class="col">
+                    <div class="col-1.5">
                         <button type="button" class="btn btn-warning">สั่งเลย</button>
                     </div>
                 </div>
@@ -115,14 +112,14 @@
             </li>
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1.5">
                         <img src="images/ต้มยำกุ้ง.jpg" class="rounded food" alt="ต้มยำกุ้ง">
                     </div>
                     <div class="col">
                         <p id="menu">ต้มยำกุ้ง</p>
                         <p id="price">50 ฿</p>
                     </div>
-                    <div class="col">
+                    <div class="col-1.5">
                         <button type="button" class="btn btn-warning">สั่งเลย</button>
                     </div>
                 </div>
@@ -130,19 +127,23 @@
             </li>
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-1.5">
                         <img src="images/ผัดผักรวม.jpg" class="rounded food" alt="ผัดผักรวม">
                     </div>
                     <div class="col">
                         <p id="menu">ผัดผักรวมมิตร</p>
                         <p id="price">70 ฿</p>
                     </div>
-                    <div class="col">
+                    <div class="col-1.5">
                         <button type="button" class="btn btn-warning">สั่งเลย</button>
                     </div>
                 </div>
 
             </li>
+
+
+            <p class="output"></p>
+
         </ul>
     </div>
     <div class="container">
@@ -159,16 +160,17 @@
 
     </div>
 
-    <!-- </section> -->
+
 
 
     <script>
         async function main() {
+            showMenu()
             await liff.init({ liffId: "1655215015-V58PdOrL" })
+
         }
 
         main()
-
     </script>
 
 </body>
