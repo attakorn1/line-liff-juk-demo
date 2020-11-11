@@ -1,3 +1,7 @@
+/* --------------------------- */
+/* -----------Global----------- */
+/* --------------------------- */
+
 #topic {
   color: black;
   font-size: larger;
@@ -15,6 +19,70 @@
   padding: 10px;
   background-size: 20%;
 }
+
+body {
+  padding: 0px;
+  padding-top: 15px;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font-family: 'Mitr', sans-serif;
+}
+
+footer {
+  background: white;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 900;
+  font-family: 'Mitr', sans-serif;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+}
+
+#footerNextBttn {
+
+  justify-content: center;
+  background-color: #FFDB01;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  margin: 4px 2px;
+  width: 100%;
+
+}
+
+#footerBackBttn {
+  justify-content: center;
+  background-color: #FFDB01;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  margin: 4px 2px;
+  width: 100%;
+
+}
+
+
+/* --------------------------- */
+/* -----------Local----------- */
+/* --------------------------- */
 
 .badge {
   font-size: 10px;
@@ -56,30 +124,7 @@ img {
   border-collapse: separate;
 }
 
-body {
-  padding: 0px;
-  padding-top: 15px;
-  min-height: 100%;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  font-family: 'Mitr', sans-serif;
-}
 
-footer {
-  background: white;
-  color: white;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  font-weight: 900;
-  font-family: 'Mitr', sans-serif;
-  position: -webkit-sticky;
-  position: sticky;
-  bottom: 0;
-  left: 0;
-
-
-  width: 100%;
-}
 
 #orderBttn {
 
@@ -92,39 +137,12 @@ footer {
   border-radius: 12px;
 }
 
-#footerNextBttn {
 
-  justify-content: center;
-  background-color: #FFDB01;
-  border-radius: 10px;
-  border: none;
-  color: black;
-  padding: 10px;
+
+#paymentMethodBttn {
+  width: 80%;
   text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-
-  margin: 4px 2px;
-  width: 100%;
-
-}
-
-#footerBackBttn {
-  justify-content: center;
-  background-color: #FFDB01;
-  border-radius: 10px;
-  border: none;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-
-  margin: 4px 2px;
-  width: 100%;
-
+  position: relative;
 }
 
 #accessToken, #utouId {
