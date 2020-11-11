@@ -6,8 +6,8 @@
     <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
 
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet"> -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -28,46 +28,45 @@
 
     </div>
     <div class="container" style="padding-top:15px;">
+        <div class="container mt=20">
+
+
+
+
+        </div>
+
 
         <div class="container mt=20">
 
             <div class="container mt=20">
                 <div class="row">
                     <div class="col-1.5">
-                        <h1 id="topic">สถานที่จัดส่ง</h1>
+                        <h1 id="topic">โอนเงินและส่ง Slip</h1>
                     </div>
                     <div class="col">
                         <!-- <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span> -->
                     </div>
                 </div>
+                <div class="row">
+                    <p id="topic-second">ยอดรวม 120 ฿</p>
+                </div>
+
+                <div class="row">
+                    <p>เลขบัญชี: XXXXXXXXX < ให้กด copy เลขบัญชีเข้า clipboard ได้</p>
+                            <p>ธนาคารกสิกรไทย</p>
+                </div>
+
+
+                <div class="row">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">เลือก Slip</label>
+                            <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                        </div>
+                    </form>
+                </div>
 
             </div>
-        </div>
-
-
-        <div class="container mt=20">
-
-
-            <form>
-                <div class="form-group">
-                    <label for="nameBuyer">ชื่อ</label>
-                    <input type="text" class="form-control" placeholder="ใส่ชื่อเรียก">
-
-                </div>
-                <div class="form-group">
-                    <label for="placeBuyer">สถานที่นัดรับ</label>
-                    <input type="text" class="form-control" placeholder="เช่น บ้านเลขที่ หรือ ส่วนกลาง">
-                </div>
-                <div class="form-group">
-                    <label for="placeBuyer">เบอร์ติดต่อ</label>
-                    <input type="tel" class="form-control" placeholder="012-3456789">
-                </div>
-                <div class="form-group">
-                    <label for="placeBuyer">หมายเหตุ</label>
-                    <input type="text" class="form-control" placeholder="ฝากบอกถึงคนขาย">
-                </div>
-            </form>
-
         </div>
 
     </div>
@@ -79,11 +78,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <button type="button" class="btn btn-primary" id="footerBackBttn">
-                        < </button>
+                    <button type="button" class="btn btn-primary" id="footerBackBttn"
+                        onclick="document.location='/pages/3.0_orderPayment.html'">
+                        กลับ </button>
                 </div>
                 <div class="col-9">
-                    <button type="button" class="btn btn-primary" id="footerNextBttn">เสร็จสิ้น</button>
+                    <button type="button" class="btn btn-primary" id="footerNextBttn"
+                        onclick="document.location='/pages/4.0_orderPlace.html'">ยืนยัน</button>
                 </div>
 
 

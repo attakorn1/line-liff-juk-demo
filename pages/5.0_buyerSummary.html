@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet"> -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
+
+    <title>JUK JUK</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div style="background-color: #FFDB01; height:2px; width:80%; padding-top: 0px; border: none; position: -webkit-sticky;
+    position: sticky;  margin: auto">
+        </div>
+
+    </div>
+    <div class="container" style="padding-top:15px;">
+
+        <div class="container mt=20">
+
+            <div class="container mt=20">
+                <div class="row">
+                    <div class="col-1.5">
+                        <h1 id="topic">สรุปการทำรายการ</h1>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="container mt=20">
+
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+
+                    <div class="row">
+                        <div class="col-1.5">
+
+
+                            <h2>รายการอาหาร</h2>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-1.5">
+
+                            <h2>วิธีชำระเงิน</h2>
+
+
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-1.5">
+
+                            <h2>สถานที่จัดส่ง</h2>
+                            <form>
+                                <div class="form-group">
+                                    <label for="nameBuyer">ชื่อ</label>
+
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="placeBuyer">สถานที่นัดรับ</label>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="placeBuyer">เบอร์ติดต่อ</label>
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="placeBuyer">หมายเหตุ</label>
+
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+
+                </li>
+
+
+
+            </ul>
+
+
+
+
+        </div>
+
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row" style="width: 90%; margin: auto;">
+                <div class="col">
+                    <button type="button" class="btn btn-primary" id="footerNextBttn"
+                        onclick="closed()">เสร็จสิ้น</button>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </footer>
+
+
+    <script>
+
+        function closed() {
+            liff.closeWindow()
+        }
+        async function main() {
+
+            await liff.init({ liffId: " 1655215015-V58PdOrL" })
+        }
+        main() 
+    </script>
+
+</body>
+
+</html>
