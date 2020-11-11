@@ -16,7 +16,8 @@
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
-
+    <script src="./js/index.js"></script>
+    
     <title>JUK JUK</title>
 </head>
 
@@ -186,7 +187,10 @@
                 buttonOrder.style.display = "none";
             }
         }
-
+        
+        function closed() {
+            liff.closeWindow()
+        }
 
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
         document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
