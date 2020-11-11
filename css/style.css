@@ -128,14 +128,25 @@ img {
 
 .input-group {
   position: relative;
-  display: table;
-  border-collapse: separate;
+  size: 2px;
+  /* display: table; */
+  /* border-collapse: separate; */
+}
+
+#adjustBttn {
+  font-size: 12px;
+  font-weight: 700;
+  background-color: #FFDB01;
+  border: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 
 
 #orderBttn {
-
   font-size: 12px;
   color: black;
   font-weight: 700;
@@ -176,9 +187,6 @@ img {
   font-style: normal;
 
 }
-
-
-
 
 @font-face {
   font-family: 'db_helvethaicamon_x55_regular';
