@@ -28,8 +28,3 @@ await request.post({
    client_secret: CHANNEL_SECRET
  } 
 })
-
-function closed() {
-  liff.closeWindow()
-}
-

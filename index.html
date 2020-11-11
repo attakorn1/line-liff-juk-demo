@@ -45,7 +45,7 @@
             </div>
         </div>
 
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush" id="cookBook">
             <li class="list-group-item">
 
                 <div class="row">
@@ -59,20 +59,20 @@
                     <div class="col-1.5">
                         <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
                             สั่งเลย</button>
-
                         <div class="input-group" id="numberAdjust">
 
                             <button class="btn" type="button" id="adjustBttn"
-                                style="border-radius: 12px 0px 0px 12px; text-align: right;">-</button>
+                                style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
+                                onclick="decreaseOrder()">-</button>
                             <input type="text" class="form-control" placeholder="" aria-label="small"
                                 aria-describedby="basic-addon1" id="numberOfOrder">
                             <div class="input-group-prepend" id="inputGroup-sizing-xs">
 
                             </div>
                             <button class="btn" type="button" id="adjustBttn"
-                                style="border-radius: 0px 12px 12px 0px; text-align: left;">+</button>
+                                style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
+                                onclick="increaseOrder()">+</button>
                         </div>
-
                     </div>
                 </div>
 
@@ -87,31 +87,8 @@
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                        <button type="button" class="btn btn-primary" id="orderBttn">+
                             สั่งเลย</button>
-
-                        <div class="input-group" id="numberAdjust">
-
-                            <button class="btn" type="button" id="adjustBttn"
-                                style="border-radius: 12px 0px 0px 12px; text-align: right;">-</button>
-                            <input type="text" class="form-control" placeholder="" aria-label="small"
-                                aria-describedby="basic-addon1" id="numberOfOrder">
-                            <div class="input-group-prepend" id="inputGroup-sizing-xs">
-
-                            </div>
-                            <button class="btn" type="button" id="adjustBttn"
-                                style="border-radius: 0px 12px 12px 0px; text-align: left;">+</button>
-                        </div>
-
-                        <!-- <div class="input-group">
-                            <button class="btn" type="button" id="adjustBttn"
-                                style="border-radius: 12px 0px 0px 12px;">-</button>
-                            <div class="input-group"><input type="text" value="0.00"></div>
-                            <button class="btn" type="button" id="adjustBttn"
-                                style="border-radius: 0px 12px 12px 0px;">+</button>
-                        </div> -->
-
-
                     </div>
 
 
@@ -127,7 +104,7 @@
                         <p id="price">70 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                        <button type="button" class="btn btn-primary" id="orderBttn">+
                             สั่งเลย</button>
                     </div>
                 </div>
@@ -143,7 +120,7 @@
                         <p id="price">50 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                        <button type="button" class="btn btn-primary" id="orderBttn">+
                             สั่งเลย</button>
                     </div>
                 </div>
@@ -159,7 +136,7 @@
                         <p id="price">70 ฿</p>
                     </div>
                     <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+                        <button type="button" class="btn btn-primary" id="orderBttn">+
                             สั่งเลย</button>
                     </div>
                 </div>
@@ -191,20 +168,74 @@
 
     <script>
 
-        function addOrder() {
-            let buttonOrder = document.getElementById("orderBttn");
-            let inputGroup = document.getElementById("numberAdjust");
-            let orderNumber = document.getElementById("numberOfOrder");
-            if (buttonOrder.style.display === "none") {
-                inputGroup.style.display = "none";
-            } else {
-                buttonOrder.style.display = "none";
-            }
+
+        var cookMenu = 5;
+
+        for (var i = 0; i < cookMenu; i++) {
+            menuRow = document.createElement("li")
+            menuRow.className = "list-group-item";
+            menuRow.innerHTML = `
+            <div class="row">
+            <div class="col-1.5">
+                <img src="images/db/กะเพราหมูกรอบ.jpg" class="rounded" id="menuImage" alt="กะเพราหมูกรอบ">
+            </div>
+            <div class="col">
+            <p id="menu">กะเพราหมูกรอบ</p>
+            <p id="price">50 ฿</p>
+            </div>
+            <div class="col-1.5">
+            <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+            สั่งเลย</button>
+            <div class="input-group" id="numberAdjust" style="display:none">
+
+            <button class="btn" type="button" id="adjustBttn"
+                style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
+                onclick="decreaseOrder()">-</button>
+            <input type="text" class="form-control" placeholder="" aria-label="small"
+                aria-describedby="basic-addon1" id="numberOfOrder">
+            <div class="input-group-prepend" id="inputGroup-sizing-xs">
+
+            </div>
+            <button class="btn" type="button" id="adjustBttn"
+                style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
+                onclick="increaseOrder()">+</button>
+                </div>
+            </div>
+            </div>`;
+            document.getElementById("cookBook").append(menuRow)
         }
 
-        function closed() {
-            liff.closeWindow()
+
+        document.getElementById("numberAdjust").style.display = "none"
+
+        function addOrder() {
+            document.getElementById("orderBttn").style.display = "none"
+            document.getElementById("numberAdjust").style.display = "flex"
+            document.getElementById('numberOfOrder').value = 1
         }
+
+        function increaseOrder() {
+            var value = parseInt(document.getElementById('numberOfOrder').value);
+            value = isNaN(value) ? 0 : value;
+            value = value + 1;
+            document.getElementById('numberOfOrder').value = value;
+        }
+
+        function decreaseOrder() {
+            var value = parseInt(document.getElementById('numberOfOrder').value);
+            value = isNaN(value) ? 0 : value;
+            value = value - 1;
+
+            if (value > 0) {
+                document.getElementById('numberOfOrder').value = value;
+            } else {
+                document.getElementById("numberAdjust").style.display = "none"
+                document.getElementById('numberOfOrder').value = 0
+                document.getElementById("orderBttn").style.display = "block"
+            }
+
+        }
+
 
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
         document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
