@@ -1,30 +1,130 @@
-button {
-  display: block;
+#topic {
+  color: black;
+  font-size: larger;
+  font-weight: bold;
+  background-color: #FFDB01;
+  border-radius: 15px;
+  padding: 10px;
+  background-size: 20%;
+}
+
+#topic-second {
+  color: black;
+  font-size: large;
+  font-weight: bold;
+  padding: 10px;
+  background-size: 20%;
+}
+
+.badge {
+  font-size: 10px;
+  vertical-align: top;
+  position: relative;
+}
+
+#line_name {
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  color: #848282;
+}
+
+#menu {
+  text-align: left;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 2px;
+}
+
+#price {
+  font-size: 12px;
+  text-align: start;
+}
+
+img {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.input-group {
+  position: relative;
+  display: table;
+  border-collapse: separate;
+}
+
+body {
+  padding: 0px;
+  padding-top: 15px;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  font-family: 'Mitr', sans-serif;
+}
+
+footer {
+  background: white;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: 900;
+  font-family: 'Mitr', sans-serif;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+
+
   width: 100%;
-  padding: 8px 0;
-  margin: 8px auto
 }
 
-p {
-  border-bottom: 1px dashed #ddd
+#orderBttn {
+
+  font-size: 12px;
+  color: black;
+  font-weight: 700;
+  background-color: #FFDB01;
+  border: none;
+  padding: 5px;
+  border-radius: 12px;
 }
 
-#pictureUrl {
-  display: block;
-  margin: 0 auto;
-  width: 12%;
-  display: -moz-box;
-  display: -webkit-box;
-  display: box;
-  -moz-box-pack: center;
-  -moz-box-align: center;
-  -webkit-box-pack: center;
-  -webkit-box-align: center;
-  box-pack: center;
-  box-align: center;
-  -moz-border-radius: 100px;
-  -webkit-border-radius: 100px;
-  border-radius: 100px;
+#footerNextBttn {
+
+  justify-content: center;
+  background-color: #FFDB01;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  margin: 4px 2px;
+  width: 100%;
+
+}
+
+#footerBackBttn {
+  justify-content: center;
+  background-color: #FFDB01;
+  border-radius: 10px;
+  border: none;
+  color: black;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+
+  margin: 4px 2px;
+  width: 100%;
+
 }
 
 #accessToken, #utouId {
