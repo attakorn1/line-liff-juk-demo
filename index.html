@@ -17,7 +17,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script src="./js/index.js"></script>
-    
+
     <title>JUK JUK</title>
 </head>
 
@@ -59,6 +59,20 @@
                     <div class="col-1.5">
                         <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
                             สั่งเลย</button>
+
+                        <div class="input-group" id="numberAdjust">
+
+                            <button class="btn" type="button" id="adjustBttn"
+                                style="border-radius: 12px 0px 0px 12px; text-align: right;">-</button>
+                            <input type="text" class="form-control" placeholder="" aria-label="small"
+                                aria-describedby="basic-addon1" id="numberOfOrder">
+                            <div class="input-group-prepend" id="inputGroup-sizing-xs">
+
+                            </div>
+                            <button class="btn" type="button" id="adjustBttn"
+                                style="border-radius: 0px 12px 12px 0px; text-align: left;">+</button>
+                        </div>
+
                     </div>
                 </div>
 
@@ -76,7 +90,7 @@
                         <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
                             สั่งเลย</button>
 
-                        <!-- <div class="input-group" id="numberAdjust">
+                        <div class="input-group" id="numberAdjust">
 
                             <button class="btn" type="button" id="adjustBttn"
                                 style="border-radius: 12px 0px 0px 12px; text-align: right;">-</button>
@@ -89,7 +103,7 @@
                                 style="border-radius: 0px 12px 12px 0px; text-align: left;">+</button>
                         </div>
 
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <button class="btn" type="button" id="adjustBttn"
                                 style="border-radius: 12px 0px 0px 12px;">-</button>
                             <div class="input-group"><input type="text" value="0.00"></div>
@@ -187,7 +201,7 @@
                 buttonOrder.style.display = "none";
             }
         }
-        
+
         function closed() {
             liff.closeWindow()
         }
