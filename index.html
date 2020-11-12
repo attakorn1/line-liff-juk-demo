@@ -168,7 +168,7 @@
 
     <script>
 
-        var dict = {
+        var cookMenu = {
             key1: 'กะเพราหมูกรอบ',
             key2: 'ข้าวผัดกุ้ง',
             key3: 'แกงจืดเต้าหู้',
@@ -176,9 +176,12 @@
             key5: 'ผัดผักรวมมิตร'
         };
 
-console.log(dict)
+        var sizeMenu = Object.size(cookMenu)
 
-        var cookMenu = 5;
+        console.log(sizeMenu)
+
+
+        var cookMenu = sizeMenu;
 
         for (var i = 0; i < cookMenu; i++) {
             menuRow = document.createElement("li")
