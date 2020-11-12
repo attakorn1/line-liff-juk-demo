@@ -168,32 +168,97 @@
 
     <script>
 
-        var cookMenu = {
-            key1: 'กะเพราหมูกรอบ',
-            key2: 'ข้าวผัดกุ้ง',
-            key3: 'แกงจืดเต้าหู้',
-            key4: 'ต้มยำกุ้ง',
-            key5: 'ผัดผักรวมมิตร'
+
+        var queryData = {
+            "data": {
+                "data": [
+                    {
+                        "account_banking": {
+                            "bank": "kbank",
+                            "firstname": "Thanakorn",
+                            "lastname": "Thipgrathok",
+                            "number": "0502624687"
+                        },
+                        "created_at": 1605093577435,
+                        "group": [
+                            {
+                                "groupId": "C6f2f2d816d8fb70ed25433c67ed23d73",
+                                "status": true
+                            }
+                        ],
+                        "open": {
+                            "day": [
+                                "mon",
+                                "tue",
+                                "wed"
+                            ],
+                            "time": [
+                                "00:00",
+                                "23:55"
+                            ]
+                        },
+                        "order": true,
+                        "preorder": true,
+                        "products": [
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.jpg?alt=media&token=640c036e-35ae-4cbf-bff3-f29fd0a1e5f9",
+                                "menuId": "1605093577435-00001",
+                                "name": "ข้าวกะเพราหมูกรอบ",
+                                "price": 50,
+                                "status": true
+                            },
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=37c5811e-d2cf-48dd-ab35-8b9667e23b70",
+                                "menuId": "1605093577435-00002",
+                                "name": "ข้าวผัดกุ้ง",
+                                "price": 50,
+                                "status": true
+                            },
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%A2%E0%B8%B3%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=c0ad1750-6f7d-4632-b33d-69ed7c3a5498",
+                                "menuId": "1605093577435-00003",
+                                "name": "ต้มยำกุ้ง",
+                                "price": 80,
+                                "status": true
+                            },
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%88%E0%B8%B7%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%B9%E0%B9%89.jpg?alt=media&token=7a49c324-e34d-427c-9a84-d303d44f7378",
+                                "menuId": "1605093577435-00004",
+                                "name": "แกงจืดเต้าหู้",
+                                "price": 70,
+                                "status": true
+                            }
+                        ],
+                        "storeId": "1605093577435",
+                        "storeImage": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/gourmet-burger-scaled.jpg?alt=media&token=b2122426-efcc-49ab-849d-4c9112f71908",
+                        "storeName": "คิวหิวข้าว1",
+                        "total_crap": 35,
+                        "userId": "Ubca3d3c0cdefb9bcc4b09778cbd30b4e"
+                    }
+                ],
+                "status": true
+            }
         };
 
-        var sizeMenu = Object.size(cookMenu)
+        if (queryData.data.data[0].status = true) {
 
-        console.log(sizeMenu)
+            var products = queryData.data.data[0].products
+            var sizeMenu = products.length
+            console.log(sizeMenu)
+            console.log(products[0].menuId)
 
-
-        var cookMenu = sizeMenu;
-
-        for (var i = 0; i < cookMenu; i++) {
-            menuRow = document.createElement("li")
-            menuRow.className = "list-group-item";
-            menuRow.innerHTML = `
+            for (var i = 0; i < sizeMenu; i++) {
+                console.log(products[0].name[i])
+                menuRow = document.createElement("li")
+                menuRow.className = "list-group-item";
+                menuRow.innerHTML = `
             <div class="row">
             <div class="col-1.5">
-                <img src="images/db/กะเพราหมูกรอบ.jpg" class="rounded" id="menuImage" alt="กะเพราหมูกรอบ">
+                <img src="${products[i].image}.png" class="rounded" id="menuImage" alt="${products[i].name}">
             </div>
             <div class="col">
-            <p id="menu">กะเพราหมูกรอบ</p>
-            <p id="price">50 ฿</p>
+            <p id="menu">${products[i].name}</p>
+            <p id="price">${products[i].price}฿</p>
             </div>
             <div class="col-1.5">
             <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
@@ -214,8 +279,54 @@
                 </div>
             </div>
             </div>`;
-            document.getElementById("cookBook").append(menuRow)
+
+                document.getElementById("cookBook").append(menuRow)
+            }
         }
+
+
+
+
+
+
+
+
+
+        // var cookMenu = sizeMenu;
+
+        // for (var i = 0; i < sizeMenu; i++) {
+        //     menuRow = document.createElement("li")
+        //     menuRow.className = "list-group-item";
+        //     menuRow.innerHTML = `
+        //     <div class="row">
+        //     <div class="col-1.5">
+        //         <img src="images/db/กะเพราหมูกรอบ.jpg}" class="rounded" id="menuImage" alt="กะเพราหมูกรอบ">
+        //     </div>
+        //     <div class="col">
+        //     <p id="menu">กะเพราหมูกรอบ</p>
+        //     <p id="price">50฿</p>
+        //     </div>
+        //     <div class="col-1.5">
+        //     <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
+        //     สั่งเลย</button>
+        //     <div class="input-group" id="numberAdjust" style="display:none">
+
+        //     <button class="btn" type="button" id="adjustBttn"
+        //         style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
+        //         onclick="decreaseOrder()">-</button>
+        //     <input type="text" class="form-control" placeholder="" aria-label="small"
+        //         aria-describedby="basic-addon1" id="numberOfOrder">
+        //     <div class="input-group-prepend" id="inputGroup-sizing-xs">
+
+        //     </div>
+        //     <button class="btn" type="button" id="adjustBttn"
+        //         style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
+        //         onclick="increaseOrder()">+</button>
+        //         </div>
+        //     </div>
+        //     </div>`;
+        //     document.getElementById("cookBook").append(menuRow)
+        // }
 
 
 
