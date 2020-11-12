@@ -9,11 +9,11 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet"> -->
+    <link rel="stylesheet" href="modules/chart.css">
 
+    <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
     <script src="js/bootstrap.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
 
@@ -21,6 +21,7 @@
 </head>
 
 <body>
+
     <div class="container">
 
         <div style="background-color: #FFDB01; height:2px; width:80%; padding-top: 0px; border: none; position: -webkit-sticky;
@@ -28,6 +29,7 @@
         </div>
 
     </div>
+
     <div class="container" style="padding-top:15px;">
 
         <div class="container mt=20">
@@ -40,27 +42,65 @@
         </div>
 
         <div class="row">
-            <div class="col-md-6 col-xl-3 mb-4">
+            <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
                 <div class="card shadow border-left-primary py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
-                            <div class="col mr-2">
-                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1"><span>Earnings
-                                        (monthly)</span></div>
-                                <div class="text-dark font-weight-bold h5 mb-0"><span>$40,000</span></div>
+                            <div class="col-7">
+                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
+                                    <span>รายได้สัปดาห์นี้</span></div>
                             </div>
-                            <div class="col-auto"><i class="fas fa-calendar fa-2x text-gray-300"></i></div>
+                        </div>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-7">
+                                <div class="text-dark font-weight-bold h2 mb-0"><span>฿40,000</span></div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="text"><span>+ 120 <br>จากสัปดาห์ก่อน</span></div>
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
+                <div class="card shadow border-left-primary py-2">
+                    <div class="card-body">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-7">
+                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                    <span>จำนวนออเดอร์สัปดาห์นี้</span></div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-7">
+                                <div class="text-dark font-weight-bold h2 mb-0"><span>50</span></div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="text"><span>+ 18 <br>จากสัปดาห์ก่อน</span></div>
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
             <div class="col-md-6 col-xl-3 mb-4">
                 <div class="card shadow border-left-success py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col mr-2">
-                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1"><span>Earnings
-                                        (annual)</span></div>
+                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
+                                    <span>รายได้เดือนนี้</span></div>
                                 <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
                             </div>
                             <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
@@ -68,199 +108,424 @@
                     </div>
                 </div>
             </div>
+
             <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-info py-2">
+                <div class="card shadow border-left-success py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col mr-2">
-                                <div class="text-uppercase text-info font-weight-bold text-xs mb-1"><span>Tasks</span>
-                                </div>
-                                <div class="row no-gutters align-items-center">
-                                    <div class="col-auto">
-                                        <div class="text-dark font-weight-bold h5 mb-0 mr-3"><span>50%</span></div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="progress progress-sm">
-                                            <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0"
-                                                aria-valuemax="100" style="width: 50%;"><span class="sr-only">50%</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
+                                    <span>จำนวนออเดอร์เดือนนี้</span></div>
+                                <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
                             </div>
-                            <div class="col-auto"><i class="fas fa-clipboard-list fa-2x text-gray-300"></i></div>
+                            <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-warning py-2">
+
+
+
+            <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
+                <div class="card shadow border-left-primary py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
-                            <div class="col mr-2">
-                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1"><span>Pending
-                                        Requests</span></div>
-                                <div class="text-dark font-weight-bold h5 mb-0"><span>18</span></div>
+                            <div class="col-6">
+                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                                    <span>รายได้รวม</span></div>
                             </div>
-                            <div class="col-auto"><i class="fas fa-comments fa-2x text-gray-300"></i></div>
+                        </div>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-4">
+                                <div class="text-dark font-weight-bold h2 mb-0"><span>฿5,500</span></div>
+                            </div>
+                            <div class="col-auto">
+                                <!-- <div class="text"><span>+ 18 <br>จากสัปดาห์ก่อน</span></div> -->
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
-
-
 
 
 
 
 
         <div class="row">
-            <div class="col-lg-6 mb-4">
+
+
+
+
+
+            <div class="col-lg-7 col-xl-8">
                 <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="text-primary font-weight-bold m-0">Projects</h6>
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h6 class="text-primary font-weight-bold m-0">Earnings Overview</h6>
+
                     </div>
                     <div class="card-body">
-                        <h4 class="small font-weight-bold">Server migration<span class="float-right">20%</span></h4>
+                        <h2>Bar Chart</h2>
+                        <div class="chart chart--bar-chart js-bar-chart"></div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
+                <div class="card shadow border-left-primary py-2">
+                    <div class="card-body">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-4">
+                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
+                                    <span>จำนวนลูกค้า</span></div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-4">
+                                <div class="text-dark font-weight-bold h2 mb-0">50 คน<span></span></div>
+                            </div>
+                            <div class="col-auto">
+                                <div class="text"><span>+ 3 <br>จากสัปดาห์ก่อน</span></div>
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-lg-6 mb-4">
+                <div class="card shadow mb-4">
+
+                    <div class="card-body">
+                        <h4 class="card-title">ประเภทของลูกค้า</h4>
+                        <h4 class="small font-weight-bold">แฟนพันธุ์แท้<span class="float-right">10 คน</span></h4>
+                        <div class="progress mb-4">
+                            <div class="progress-bar bg-success" aria-valuenow="10" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 10%;"><span class="sr-only">10%</span></div>
+                        </div>
+                        <h4 class="small font-weight-bold">ซื้อบ่อย<span class="float-right">20 คน</span></h4>
+                        <div class="progress mb-4">
+                            <div class="progress-bar bg-warning" aria-valuenow="20" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 20%;"><span class="sr-only">20%</span></div>
+                        </div>
+                        <h4 class="small font-weight-bold">นาน ๆ ที<span class="float-right">50 คน</span></h4>
+                        <div class="progress mb-4">
+                            <div class="progress-bar bg-info" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"
+                                style="width: 50%;"><span class="sr-only">50%</span></div>
+                        </div>
+                        <h4 class="small font-weight-bold">ห่างหาย<span class="float-right">20 คน</span></h4>
                         <div class="progress mb-4">
                             <div class="progress-bar bg-danger" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
                                 style="width: 20%;"><span class="sr-only">20%</span></div>
                         </div>
-                        <h4 class="small font-weight-bold">Sales tracking<span class="float-right">40%</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar bg-warning" aria-valuenow="40" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 40%;"><span class="sr-only">40%</span></div>
-                        </div>
-                        <h4 class="small font-weight-bold">Customer Database<span class="float-right">60%</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar bg-primary" aria-valuenow="60" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 60%;"><span class="sr-only">60%</span></div>
-                        </div>
-                        <h4 class="small font-weight-bold">Payout Details<span class="float-right">80%</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar bg-info" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                                style="width: 80%;"><span class="sr-only">80%</span></div>
-                        </div>
-                        <h4 class="small font-weight-bold">Account setup<span class="float-right">Complete!</span></h4>
-                        <div class="progress mb-4">
-                            <div class="progress-bar bg-success" aria-valuenow="100" aria-valuemin="0"
-                                aria-valuemax="100" style="width: 100%;"><span class="sr-only">100%</span></div>
-                        </div>
+
+
+
                     </div>
                 </div>
-                <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <h6 class="text-primary font-weight-bold m-0">Todo List</h6>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">10:30
-                                        AM</span>
-                                </div>
-                                <div class="col-auto">
-                                   
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">11:30
-                                        AM</span>
-                                </div>
-                                <div class="col-auto">
-                                    
-                                </div>
-                            </div>
-                        </li>
-                        <li class="list-group-item">
-                            <div class="row align-items-center no-gutters">
-                                <div class="col mr-2">
-                                    <h6 class="mb-0"><strong>Lunch meeting</strong></h6><span class="text-xs">12:30
-                                        AM</span>
-                                </div>
-                                <div class="col-auto">
-                                    
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-
-        <div class="col-lg-7 col-xl-8">
-            <div class="card shadow mb-4">
-                <div class="card-header d-flex justify-content-between align-items-center">
-                    <h6 class="text-primary font-weight-bold m-0">Earnings Overview</h6>
-                    <div class="dropdown no-arrow"><button class="btn btn-link btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button"><i class="fas fa-ellipsis-v text-gray-400"></i></button>
-                        <div class="dropdown-menu shadow dropdown-menu-right animated--fade-in">
-                            <p class="text-center dropdown-header">dropdown header:</p><a class="dropdown-item" href="#"> Action</a><a class="dropdown-item" href="#"> Another action</a>
-                            <div class="dropdown-divider"></div><a class="dropdown-item" href="#"> Something else here</a></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    <div class="chart-area"><canvas height="400" width="551" style="display: block; height: 320px; width: 441px;"></canvas></div>
-                </div>
-            </div>
-        </div>
-
-
-
-    </div>
-
-
-
-
-
-
-
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-3">
-                    <button type="button" class="btn btn-primary" id="footerBackBttn">
-                        < </button>
-                </div>
-                <div class="col-9">
-                    <!-- <button type="button" class="btn btn-primary" id="footerNextBttn">สรุปรายการ</button> -->
-                </div>
-
 
             </div>
 
 
         </div>
-    </footer>
 
 
-    <script>
 
-        function addOrder() {
-            let buttonOrder = document.getElementById("orderBttn");
-            let inputGroup = document.getElementById("numberAdjust");
-            let orderNumber = document.getElementById("numberOfOrder");
-            if (buttonOrder.style.display === "none") {
-                inputGroup.style.display = "none";
-            } else {
-                buttonOrder.style.display = "none";
+        <div class="row">
+            <div class="col-lg-7 col-xl-8">
+                <div class="card shadow border-left-primary py-2">
+                    <div class="card-body">
+                        <h4 class="card-title">รายชื่อลูกค้าผู้น่ารัก</h4>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ชื่อ</th>
+
+                                    <th>ซื้อครั้งล่าสุด</th>
+                                    <th>ยอดรวม (บาท)</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Jacob</td>
+
+                                    <td>12 May 2017</td>
+                                    <td>1,250</td>
+                                    <td>
+                                        <label class="badge badge-danger">ห่างหาย</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Messsy</td>
+                                    <td>53275532</td>
+                                    <td>15 May 2017</td>
+                                    <td>
+                                        <label class="badge badge-warning">ซื้อบ่อย</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>John</td>
+                                    <td>53275533</td>
+                                    <td>14 May 2017</td>
+                                    <td>
+                                        <label class="badge badge-info">นาน ๆ ที</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Peter</td>
+                                    <td>53275534</td>
+                                    <td>16 May 2017</td>
+                                    <td>
+                                        <label class="badge badge-success">แฟนพันธุ์แท้</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Dave</td>
+                                    <td>53275535</td>
+                                    <td>20 May 2017</td>
+                                    <td>
+                                        <label class="badge badge-warning">ซื้อบ่อย</label>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        <button type="button" class="btn btn-primary" id="footerBackBttn">
+                            < </button>
+                    </div>
+                    <div class="col-9">
+                        <!-- <button type="button" class="btn btn-primary" id="footerNextBttn">สรุปรายการ</button> -->
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </footer>
+
+
+        
+        <script>
+
+            const defaults = {
+                width: 300,
+                height: 200,
+                margin: {
+                    top: 20,
+                    right: 20,
+                    bottom: 40,
+                    left: 40
+                },
+                axis: true,
+                axisPadding: 5,
+                tickSize: 10,
+                barPadding: 10,
+                ease: d3.easeLinear,
+                nice: true,
+                type: 'rounded'
+            };
+
+            class BarChart {
+
+                constructor(element, options) {
+                    Object.assign(this, defaults, options);
+
+                    this.element = element;
+                    this.init();
+                }
+
+                dimensions() {
+                    const { margin } = this;
+
+                    return [
+                        this.width - margin.left - margin.right,
+                        this.height - margin.top - margin.bottom
+                    ];
+                }
+
+                init() {
+                    const { margin, tickSize, axisPadding } = this;
+                    const [innerWidth, innerHeight] = this.dimensions();
+
+                    this.graph = d3.select(this.element)
+
+                    const svg = this.svg = this.graph
+                        .append('svg')
+                        .attr('width', this.width)
+                        .attr('height', this.height)
+                        .append('g')
+                        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+
+                    const scaleX = this.scaleX = d3
+                        .scaleTime()
+                        .range([0, innerWidth]);
+
+                    const scaleY = this.scaleY = d3
+                        .scaleLinear()
+                        .range([innerHeight, 0]);
+
+                    const xAxis = this.xAxis = d3.axisBottom(scaleX)
+                        .ticks(5)
+                        .tickPadding(8)
+                        .tickSize(tickSize);
+
+                    const yAxis = this.yAxis = d3.axisLeft(scaleY)
+                        .ticks(3)
+                        .tickPadding(8)
+                        .tickSize(tickSize);
+
+                    svg
+                        .append('g')
+                        .attr('class', 'chart__axis chart__axis--x')
+                        .attr('transform', `translate(0, ${innerHeight + axisPadding})`)
+                        .call(xAxis);
+
+                    svg
+                        .append('g')
+                        .attr('class', 'chart__axis chart__axis--y')
+                        .attr('transform', `translate(${-axisPadding}, 0)`)
+                        .call(yAxis);
+                }
+
+                renderAxis(data, options) {
+                    let { svg } = this;
+
+                    svg = options.animate ? svg.transition() : svg;
+
+                    svg
+                        .select('.chart__axis--x')
+                        .call(this.xAxis);
+
+                    svg
+                        .select('.chart__axis--y')
+                        .call(this.yAxis);
+                }
+
+                renderBars(data, options) {
+                    const { svg, scaleX, scaleY, barPadding, type, ease } = this;
+                    const [innerWidth, innerHeight] = this.dimensions();
+                    const barWidth = innerWidth / data.length - barPadding;
+
+                    const column = svg
+                        .selectAll('.chart__column')
+                        .data(data);
+
+                    column
+                        .enter()
+                        .append('rect')
+                        .attr('class', 'chart__column');
+
+                    (options.animate ? svg.selectAll('.chart__column').transition().ease(ease) : svg.selectAll('.chart__column'))
+                        .attr('x', data => scaleX(data.date) - barWidth / 2)
+                        .attr('rx', type === 'rounded' ? barWidth / 2 : 0)
+                        .attr('ry', type === 'rounded' ? barWidth / 2 : 0)
+                        .attr('width', barWidth)
+                        .attr('height', innerHeight);
+
+                    column
+                        .exit()
+                        .remove();
+
+                    const bar = svg
+                        .selectAll('.chart__bar')
+                        .data(data);
+
+                    bar
+                        .enter()
+                        .append('rect')
+                        .attr('class', 'chart__bar');
+
+                    (options.animate ? svg.selectAll('.chart__bar').transition().ease(ease) : svg.selectAll('.chart__bar'))
+                        .attr('x', data => scaleX(data.date) - barWidth / 2)
+                        .attr('y', data => scaleY(data.value))
+                        .attr('rx', type === 'rounded' ? barWidth / 2 : 0)
+                        .attr('ry', type === 'rounded' ? barWidth / 2 : 0)
+                        .attr('width', barWidth)
+                        .attr('height', data => innerHeight - scaleY(data.value));
+
+                    bar
+                        .exit()
+                        .remove();
+                }
+
+                render(data, options = {}) {
+                    const { scaleX, scaleY } = this;
+                    const domainX = scaleX.domain(d3.extent(data, data => data.date));
+                    const domainY = scaleY.domain([0, d3.max(data, data => data.value)]);
+
+                    if (this.nice) {
+                        domainX.nice();
+                        domainY.nice();
+                    }
+
+                    if (this.axis) {
+                        this.renderAxis(data, options);
+                    }
+
+                    this.renderBars(data, options);
+                }
+
+                update(data, options) {
+                    this.render(data, {
+                        animate: true
+                    });
+                }
+
             }
-        }
+
+            function generateData(n) {
+                const data = [];
+
+                while (n--) {
+                    data.push({
+                        date: new Date(Date.now() - (n * 1000 * 60 * 60 * 24)),
+                        value: generateRandomInteger(0, 12)
+                    });
+                }
+
+                return data;
+            }
+
+            function generateRandomInteger(min, max) {
+                return Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
+            const barChart = new BarChart('.js-bar-chart');
+
+            barChart.render(generateData(12));
+
+            document.querySelector('.js-bar-chart-update').addEventListener('click', () => barChart.update(generateData(24)));
 
 
-        document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
-        document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
-        async function main() {
+            document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
+            document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
+            async function main() {
 
-            await liff.init({ liffId: "1655215015-V58PdOrL" })
+                await liff.init({ liffId: "1655215015-V58PdOrL" })
 
-        }
+            }
 
-        main()
-    </script>
+            main()
+        </script>
 </body>
 
 
