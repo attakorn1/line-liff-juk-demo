@@ -6,9 +6,7 @@
     <meta name="viewport"
         content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
 
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="modules/chart.css">
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -47,18 +45,21 @@
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col-7">
-                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
-                                    <span>รายได้สัปดาห์นี้</span></div>
+                                <div class="text-uppercase text-xs mb-1" id="dash_head">
+                                    <span>รายได้ (สัปดาห์นี้)</span></div>
                             </div>
                         </div>
                         <div class="row align-items-center no-gutters">
-                            <div class="col-7">
-                                <div class="text-dark font-weight-bold h2 mb-0"><span>฿40,000</span></div>
+                            <div class="col-4">
+                                <div class="text" id="number"><span>฿40,000</span></div>
                             </div>
-                            <div class="col-auto">
-                                <div class="text"><span>+ 120 <br>จากสัปดาห์ก่อน</span></div>
+
+                            <div class="col-8">
+                                <div class="text" id="movement" style="color: green;"><span>+
+                                        120<br>จากสัปดาห์ก่อน</span></div>
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -69,143 +70,150 @@
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
                             <div class="col-7">
-                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-                                    <span>จำนวนออเดอร์สัปดาห์นี้</span></div>
+                                <div class="text-uppercase text-xs mb-1" id="dash_head">
+                                    <span>จำนวนออเดอร์ (สัปดาห์นี้)</span></div>
                             </div>
                         </div>
                         <div class="row align-items-center no-gutters">
-                            <div class="col-7">
-                                <div class="text-dark font-weight-bold h2 mb-0"><span>50</span></div>
+                            <div class="col-4">
+                                <div class="text" id="number"><span>50</span></div>
                             </div>
-                            <div class="col-auto">
-                                <div class="text"><span>+ 18 <br>จากสัปดาห์ก่อน</span></div>
+
+                            <div class="col-8">
+                                <div class="text" id="movement" style="color: green;"><span>+
+                                        18<br>จากสัปดาห์ก่อน</span></div>
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
-
-
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-success py-2">
-                    <div class="card-body">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col mr-2">
-                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
-                                    <span>รายได้เดือนนี้</span></div>
-                                <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
-                            </div>
-                            <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-xl-3 mb-4">
-                <div class="card shadow border-left-success py-2">
-                    <div class="card-body">
-                        <div class="row align-items-center no-gutters">
-                            <div class="col mr-2">
-                                <div class="text-uppercase text-success font-weight-bold text-xs mb-1">
-                                    <span>จำนวนออเดอร์เดือนนี้</span></div>
-                                <div class="text-dark font-weight-bold h5 mb-0"><span>$215,000</span></div>
-                            </div>
-                            <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
 
             <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
                 <div class="card shadow border-left-primary py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
-                            <div class="col-6">
-                                <div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
+                            <div class="col-7">
+                                <div class="text-uppercase text-xs mb-1" id="dash_head">
+                                    <span>รายได้ (เดือนนี้)</span></div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-4">
+                                <div class="text" id="number"><span>฿5,550</span></div>
+                            </div>
+
+                            <div class="col-8">
+                                <div class="text" id="movement" style="color: green;"><span>+ 200<br>จากเดือนก่อน</span>
+                                </div>
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
+                <div class="card shadow border-left-primary py-2">
+                    <div class="card-body">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-7">
+                                <div class="text-uppercase text-xs mb-1" id="dash_head">
+                                    <span>จำนวนออเดอร์ (เดือนนี้)</span></div>
+                            </div>
+                        </div>
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-4">
+                                <div class="text" id="number"><span>50</span></div>
+                            </div>
+
+                            <div class="col-8">
+                                <div class="text" id="movement" style="color: red;"><span>- 2<br>จากเดือนก่อน</span>
+                                </div>
+                                <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
+                <div class="card shadow border-left-primary py-2">
+                    <div class="card-body">
+                        <div class="row align-items-center no-gutters">
+                            <div class="col-7">
+                                <div class="text-uppercase text-xs mb-1" id="dash_head">
                                     <span>รายได้รวม</span></div>
                             </div>
                         </div>
                         <div class="row align-items-center no-gutters">
                             <div class="col-4">
-                                <div class="text-dark font-weight-bold h2 mb-0"><span>฿5,500</span></div>
+                                <div class="text" id="number"><span>฿59,550</span></div>
                             </div>
-                            <div class="col-auto">
-                                <!-- <div class="text"><span>+ 18 <br>จากสัปดาห์ก่อน</span></div> -->
+
+                            <div class="col-8">
+                                <!-- <div class="text" id="movement" style="color: red;"><span>- 2<br>จากเดือนก่อน</span></div> -->
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
 
-
-
-
-
         <div class="row">
-
-
-
-
-
-            <div class="col-lg-7 col-xl-8">
+            <div class="col-lg-6 mb-4">
                 <div class="card shadow mb-4">
-                    <div class="card-header d-flex justify-content-between align-items-center">
-                        <h6 class="text-primary font-weight-bold m-0">Earnings Overview</h6>
-
-                    </div>
                     <div class="card-body">
-                        <h2>Bar Chart</h2>
+                        <h4 class="card-title" id="dash_head">สถิติรายได้ย้อนหลัง</h4>
                         <div class="chart chart--bar-chart js-bar-chart"></div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
+
+        <div class="row">
             <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
                 <div class="card shadow border-left-primary py-2">
                     <div class="card-body">
                         <div class="row align-items-center no-gutters">
-                            <div class="col-4">
-                                <div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
+                            <div class="col-7">
+                                <div class="text-uppercase text-xs mb-1" id="dash_head">
                                     <span>จำนวนลูกค้า</span></div>
                             </div>
                         </div>
                         <div class="row align-items-center no-gutters">
                             <div class="col-4">
-                                <div class="text-dark font-weight-bold h2 mb-0">50 คน<span></span></div>
+                                <div class="text" id="number"><span>50</span></div>
                             </div>
-                            <div class="col-auto">
-                                <div class="text"><span>+ 3 <br>จากสัปดาห์ก่อน</span></div>
+
+                            <div class="col-8">
+                                <div class="text" id="movement" style="color: green;"><span>+
+                                        2<br>จากสัปดาห์ก่อน</span></div>
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
                             </div>
+
                         </div>
-
-
                     </div>
                 </div>
             </div>
+        </div>
 
 
 
-            <div class="col-lg-6 mb-4">
-                <div class="card shadow mb-4">
-
+        <div class="row">
+            <div class="col-md-6 col-xl-3 mb-4 col-xs-1">
+                <div class="card shadow border-left-primary py-2">
                     <div class="card-body">
-                        <h4 class="card-title">ประเภทของลูกค้า</h4>
-                        <h4 class="small font-weight-bold">แฟนพันธุ์แท้<span class="float-right">10 คน</span></h4>
+                        <h4 class="card-title" id="dash_head">ประเภทของลูกค้า</h4>
+                        <h4 class="small font-weight-bold">แฟนพันธุ์แท้<span class="float-right">10 คน</span>
+                        </h4>
                         <div class="progress mb-4">
                             <div class="progress-bar bg-success" aria-valuenow="10" aria-valuemin="0"
                                 aria-valuemax="100" style="width: 10%;"><span class="sr-only">10%</span></div>
@@ -225,72 +233,70 @@
                             <div class="progress-bar bg-danger" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"
                                 style="width: 20%;"><span class="sr-only">20%</span></div>
                         </div>
-
-
-
                     </div>
                 </div>
-
             </div>
-
-
         </div>
 
 
 
+
+
+
         <div class="row">
+
+
             <div class="col-lg-7 col-xl-8">
                 <div class="card shadow border-left-primary py-2">
                     <div class="card-body">
-                        <h4 class="card-title">รายชื่อลูกค้าผู้น่ารัก</h4>
+                        <h4 class="card-title" id="dash_head">รายชื่อลูกค้า</h4>
                         <table class="table">
                             <thead>
                                 <tr>
                                     <th>ชื่อ</th>
-
-                                    <th>ซื้อครั้งล่าสุด</th>
-                                    <th>ยอดรวม (บาท)</th>
-                                    <th>Status</th>
+                                    <th>วันที่ซื้อล่าสุด</th>
+                                    <th>ยอดซื้อรวม (บาท)</th>
+                                    <th>สถานะ</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>Jacob</td>
+                                    <td>จุก</td>
 
-                                    <td>12 May 2017</td>
-                                    <td>1,250</td>
+                                    <td>1 ส.ค. 2020</td>
+                                    <td>250</td>
                                     <td>
                                         <label class="badge badge-danger">ห่างหาย</label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Messsy</td>
-                                    <td>53275532</td>
-                                    <td>15 May 2017</td>
+                                    <td>มุก</td>
+                                    <td>12 พ.ย. 2020</td>
+                                    <td>1,150</td>
                                     <td>
                                         <label class="badge badge-warning">ซื้อบ่อย</label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>John</td>
-                                    <td>53275533</td>
-                                    <td>14 May 2017</td>
+                                    <td>กัปตันคุก</td>
+                                    <td>1 พ.ย. 2020</td>
+                                    <td>550</td>
                                     <td>
                                         <label class="badge badge-info">นาน ๆ ที</label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Peter</td>
-                                    <td>53275534</td>
-                                    <td>16 May 2017</td>
+                                    <td>กุ๊กไก่</td>
+                                    <td>14 พ.ย. 2020</td>
+                                    <td>1,830</td>
                                     <td>
                                         <label class="badge badge-success">แฟนพันธุ์แท้</label>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>Dave</td>
-                                    <td>53275535</td>
-                                    <td>20 May 2017</td>
+                                    <td>เดฟ</td>
+                                    <td>9 พ.ย. 2020</td>
+                                    <td>1,010</td>
                                     <td>
                                         <label class="badge badge-warning">ซื้อบ่อย</label>
                                     </td>
@@ -299,233 +305,217 @@
                         </table>
                     </div>
                 </div>
-            </div>
-
-        </div>
 
 
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        <button type="button" class="btn btn-primary" id="footerBackBttn">
-                            < </button>
-                    </div>
-                    <div class="col-9">
-                        <!-- <button type="button" class="btn btn-primary" id="footerNextBttn">สรุปรายการ</button> -->
-                    </div>
 
 
-                </div>
 
 
-            </div>
-        </footer>
 
 
-        
-        <script>
 
-            const defaults = {
-                width: 300,
-                height: 200,
-                margin: {
-                    top: 20,
-                    right: 20,
-                    bottom: 40,
-                    left: 40
-                },
-                axis: true,
-                axisPadding: 5,
-                tickSize: 10,
-                barPadding: 10,
-                ease: d3.easeLinear,
-                nice: true,
-                type: 'rounded'
-            };
+                <script>
 
-            class BarChart {
+                    const defaults = {
+                        width: 300,
+                        height: 200,
+                        margin: {
+                            top: 20,
+                            right: 20,
+                            bottom: 40,
+                            left: 40
+                        },
+                        axis: true,
+                        axisPadding: 5,
+                        tickSize: 10,
+                        barPadding: 10,
+                        ease: d3.easeLinear,
+                        nice: true,
+                        type: 'rounded'
+                    };
 
-                constructor(element, options) {
-                    Object.assign(this, defaults, options);
+                    class BarChart {
 
-                    this.element = element;
-                    this.init();
-                }
+                        constructor(element, options) {
+                            Object.assign(this, defaults, options);
 
-                dimensions() {
-                    const { margin } = this;
+                            this.element = element;
+                            this.init();
+                        }
 
-                    return [
-                        this.width - margin.left - margin.right,
-                        this.height - margin.top - margin.bottom
-                    ];
-                }
+                        dimensions() {
+                            const { margin } = this;
 
-                init() {
-                    const { margin, tickSize, axisPadding } = this;
-                    const [innerWidth, innerHeight] = this.dimensions();
+                            return [
+                                this.width - margin.left - margin.right,
+                                this.height - margin.top - margin.bottom
+                            ];
+                        }
 
-                    this.graph = d3.select(this.element)
+                        init() {
+                            const { margin, tickSize, axisPadding } = this;
+                            const [innerWidth, innerHeight] = this.dimensions();
 
-                    const svg = this.svg = this.graph
-                        .append('svg')
-                        .attr('width', this.width)
-                        .attr('height', this.height)
-                        .append('g')
-                        .attr('transform', `translate(${margin.left}, ${margin.top})`);
+                            this.graph = d3.select(this.element)
 
-                    const scaleX = this.scaleX = d3
-                        .scaleTime()
-                        .range([0, innerWidth]);
+                            const svg = this.svg = this.graph
+                                .append('svg')
+                                .attr('width', this.width)
+                                .attr('height', this.height)
+                                .append('g')
+                                .attr('transform', `translate(${margin.left}, ${margin.top})`);
 
-                    const scaleY = this.scaleY = d3
-                        .scaleLinear()
-                        .range([innerHeight, 0]);
+                            const scaleX = this.scaleX = d3
+                                .scaleTime()
+                                .range([0, innerWidth]);
 
-                    const xAxis = this.xAxis = d3.axisBottom(scaleX)
-                        .ticks(5)
-                        .tickPadding(8)
-                        .tickSize(tickSize);
+                            const scaleY = this.scaleY = d3
+                                .scaleLinear()
+                                .range([innerHeight, 0]);
 
-                    const yAxis = this.yAxis = d3.axisLeft(scaleY)
-                        .ticks(3)
-                        .tickPadding(8)
-                        .tickSize(tickSize);
+                            const xAxis = this.xAxis = d3.axisBottom(scaleX)
+                                .ticks(5)
+                                .tickPadding(8)
+                                .tickSize(tickSize);
 
-                    svg
-                        .append('g')
-                        .attr('class', 'chart__axis chart__axis--x')
-                        .attr('transform', `translate(0, ${innerHeight + axisPadding})`)
-                        .call(xAxis);
+                            const yAxis = this.yAxis = d3.axisLeft(scaleY)
+                                .ticks(3)
+                                .tickPadding(8)
+                                .tickSize(tickSize);
 
-                    svg
-                        .append('g')
-                        .attr('class', 'chart__axis chart__axis--y')
-                        .attr('transform', `translate(${-axisPadding}, 0)`)
-                        .call(yAxis);
-                }
+                            svg
+                                .append('g')
+                                .attr('class', 'chart__axis chart__axis--x')
+                                .attr('transform', `translate(0, ${innerHeight + axisPadding})`)
+                                .call(xAxis);
 
-                renderAxis(data, options) {
-                    let { svg } = this;
+                            svg
+                                .append('g')
+                                .attr('class', 'chart__axis chart__axis--y')
+                                .attr('transform', `translate(${-axisPadding}, 0)`)
+                                .call(yAxis);
+                        }
 
-                    svg = options.animate ? svg.transition() : svg;
+                        renderAxis(data, options) {
+                            let { svg } = this;
 
-                    svg
-                        .select('.chart__axis--x')
-                        .call(this.xAxis);
+                            svg = options.animate ? svg.transition() : svg;
 
-                    svg
-                        .select('.chart__axis--y')
-                        .call(this.yAxis);
-                }
+                            svg
+                                .select('.chart__axis--x')
+                                .call(this.xAxis);
 
-                renderBars(data, options) {
-                    const { svg, scaleX, scaleY, barPadding, type, ease } = this;
-                    const [innerWidth, innerHeight] = this.dimensions();
-                    const barWidth = innerWidth / data.length - barPadding;
+                            svg
+                                .select('.chart__axis--y')
+                                .call(this.yAxis);
+                        }
 
-                    const column = svg
-                        .selectAll('.chart__column')
-                        .data(data);
+                        renderBars(data, options) {
+                            const { svg, scaleX, scaleY, barPadding, type, ease } = this;
+                            const [innerWidth, innerHeight] = this.dimensions();
+                            const barWidth = innerWidth / data.length - barPadding;
 
-                    column
-                        .enter()
-                        .append('rect')
-                        .attr('class', 'chart__column');
+                            const column = svg
+                                .selectAll('.chart__column')
+                                .data(data);
 
-                    (options.animate ? svg.selectAll('.chart__column').transition().ease(ease) : svg.selectAll('.chart__column'))
-                        .attr('x', data => scaleX(data.date) - barWidth / 2)
-                        .attr('rx', type === 'rounded' ? barWidth / 2 : 0)
-                        .attr('ry', type === 'rounded' ? barWidth / 2 : 0)
-                        .attr('width', barWidth)
-                        .attr('height', innerHeight);
+                            column
+                                .enter()
+                                .append('rect')
+                                .attr('class', 'chart__column');
 
-                    column
-                        .exit()
-                        .remove();
+                            (options.animate ? svg.selectAll('.chart__column').transition().ease(ease) : svg.selectAll('.chart__column'))
+                                .attr('x', data => scaleX(data.date) - barWidth / 2)
+                                .attr('rx', type === 'rounded' ? barWidth / 2 : 0)
+                                .attr('ry', type === 'rounded' ? barWidth / 2 : 0)
+                                .attr('width', barWidth)
+                                .attr('height', innerHeight);
 
-                    const bar = svg
-                        .selectAll('.chart__bar')
-                        .data(data);
+                            column
+                                .exit()
+                                .remove();
 
-                    bar
-                        .enter()
-                        .append('rect')
-                        .attr('class', 'chart__bar');
+                            const bar = svg
+                                .selectAll('.chart__bar')
+                                .data(data);
 
-                    (options.animate ? svg.selectAll('.chart__bar').transition().ease(ease) : svg.selectAll('.chart__bar'))
-                        .attr('x', data => scaleX(data.date) - barWidth / 2)
-                        .attr('y', data => scaleY(data.value))
-                        .attr('rx', type === 'rounded' ? barWidth / 2 : 0)
-                        .attr('ry', type === 'rounded' ? barWidth / 2 : 0)
-                        .attr('width', barWidth)
-                        .attr('height', data => innerHeight - scaleY(data.value));
+                            bar
+                                .enter()
+                                .append('rect')
+                                .attr('class', 'chart__bar');
 
-                    bar
-                        .exit()
-                        .remove();
-                }
+                            (options.animate ? svg.selectAll('.chart__bar').transition().ease(ease) : svg.selectAll('.chart__bar'))
+                                .attr('x', data => scaleX(data.date) - barWidth / 2)
+                                .attr('y', data => scaleY(data.value))
+                                .attr('rx', type === 'rounded' ? barWidth / 2 : 0)
+                                .attr('ry', type === 'rounded' ? barWidth / 2 : 0)
+                                .attr('width', barWidth)
+                                .attr('height', data => innerHeight - scaleY(data.value));
 
-                render(data, options = {}) {
-                    const { scaleX, scaleY } = this;
-                    const domainX = scaleX.domain(d3.extent(data, data => data.date));
-                    const domainY = scaleY.domain([0, d3.max(data, data => data.value)]);
+                            bar
+                                .exit()
+                                .remove();
+                        }
 
-                    if (this.nice) {
-                        domainX.nice();
-                        domainY.nice();
+                        render(data, options = {}) {
+                            const { scaleX, scaleY } = this;
+                            const domainX = scaleX.domain(d3.extent(data, data => data.date));
+                            const domainY = scaleY.domain([0, d3.max(data, data => data.value)]);
+
+                            if (this.nice) {
+                                domainX.nice();
+                                domainY.nice();
+                            }
+
+                            if (this.axis) {
+                                this.renderAxis(data, options);
+                            }
+
+                            this.renderBars(data, options);
+                        }
+
+                        update(data, options) {
+                            this.render(data, {
+                                animate: true
+                            });
+                        }
+
                     }
 
-                    if (this.axis) {
-                        this.renderAxis(data, options);
+                    function generateData(n) {
+                        const data = [];
+
+                        while (n--) {
+                            data.push({
+                                date: new Date(Date.now() - (n * 1000 * 60 * 60 * 24)),
+                                value: generateRandomInteger(0, 12)
+                            });
+                        }
+
+                        return data;
                     }
 
-                    this.renderBars(data, options);
-                }
+                    function generateRandomInteger(min, max) {
+                        return Math.floor(Math.random() * (max - min + 1)) + min;
+                    }
 
-                update(data, options) {
-                    this.render(data, {
-                        animate: true
-                    });
-                }
+                    const barChart = new BarChart('.js-bar-chart');
 
-            }
+                    barChart.render(generateData(12));
 
-            function generateData(n) {
-                const data = [];
-
-                while (n--) {
-                    data.push({
-                        date: new Date(Date.now() - (n * 1000 * 60 * 60 * 24)),
-                        value: generateRandomInteger(0, 12)
-                    });
-                }
-
-                return data;
-            }
-
-            function generateRandomInteger(min, max) {
-                return Math.floor(Math.random() * (max - min + 1)) + min;
-            }
-
-            const barChart = new BarChart('.js-bar-chart');
-
-            barChart.render(generateData(12));
-
-            document.querySelector('.js-bar-chart-update').addEventListener('click', () => barChart.update(generateData(24)));
+                    document.querySelector('.js-bar-chart-update').addEventListener('click', () => barChart.update(generateData(24)));
 
 
-            document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
-            document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
-            async function main() {
+                    document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
+                    document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
+                    async function main() {
 
-                await liff.init({ liffId: "1655215015-V58PdOrL" })
+                        await liff.init({ liffId: "1655215015-V58PdOrL" })
 
-            }
+                    }
 
-            main()
-        </script>
+                    main()
+                </script>
 </body>
 
 
