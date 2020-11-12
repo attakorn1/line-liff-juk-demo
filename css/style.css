@@ -102,12 +102,12 @@ footer {
   text-align: left;
   font-style: normal;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 20px;
   margin-top: 2px;
 }
 
 #price {
-  font-size: 12px;
+  font-size: 18px;
   text-align: start;
 }
 
@@ -124,35 +124,68 @@ img {
 }
 
 .input-group {
-  position: relative;
-  size: 2px;
-  /* display: table; */
-  /* border-collapse: separate; */
+  font-size: 12px;
 }
 
 #adjustBttn {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   background-color: #FFDB01;
   border: black;
   padding-top: 5px;
   padding-bottom: 5px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
+.adjustBttnClass{
+  font-size: 14px;
+  font-weight: 700;
+  background-color: #FFDB01;
+  border: black;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 6px;
+  padding-right: 6px;
+}
 
+/* #numberOfOrder {
+  font-size: 14px; 
+  width: 20px; 
+  padding: 0px;
+  text-align: center;
+} */
 
-#orderBttn {
-  font-size: 12px;
+/* .numberOfOrderClass {
+  font-size: 14px; 
+  width: 20px; 
+  padding: 0px;
+  text-align: center;
+} */
+
+/* #orderBttn {
+  font-size: 14px;
   color: black;
   font-weight: 700;
   background-color: #FFDB01;
   border: none;
-  padding: 5px;
+  padding: 7px;
+  padding-left: 10.5px;
+  padding-right: 10.5px;
+  border-radius: 12px;
+} */
+
+.orderBttnClass {
+  font-size: 14px;
+  color: black;
+  font-weight: 700;
+  background-color: #FFDB01;
+  border: none;
+  padding: 7px;
+  padding-left: 10.5px;
+  padding-right: 10.5px;
   border-radius: 12px;
 }
-
 
 #paymentMethodBttn {
   width: 80%;

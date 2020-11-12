@@ -46,7 +46,7 @@
         </div>
 
         <ul class="list-group list-group-flush" id="cookBook">
-            <li class="list-group-item">
+            <!-- <li class="list-group-item">
 
                 <div class="row">
                     <div class="col-1.5">
@@ -65,7 +65,7 @@
                                 style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
                                 onclick="decreaseOrder()">-</button>
                             <input type="text" class="form-control" placeholder="" aria-label="small"
-                                aria-describedby="basic-addon1" id="numberOfOrder">
+                                aria-describedby="basic-addon1" id="numberOfOrder" >
                             <div class="input-group-prepend" id="inputGroup-sizing-xs">
 
                             </div>
@@ -76,74 +76,7 @@
                     </div>
                 </div>
 
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-1.5">
-                        <img src="images/db/ข้าวผัดกุ้ง.jpg" class="rounded" id="menuImage" alt="ข้าวผัดกุ้ง">
-                    </div>
-                    <div class="col">
-                        <p id="menu">ข้าวผัดกุ้ง</p>
-                        <p id="price">50 ฿</p>
-                    </div>
-                    <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+
-                            สั่งเลย</button>
-                    </div>
-
-
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-1.5">
-                        <img src="images/db/แกงจืดเต้าหู้.jpg" class="rounded" id="menuImage" alt="แกงจืดเต้าหู้">
-                    </div>
-                    <div class="col">
-                        <p id="menu">แกงจืดเต้าหู้</p>
-                        <p id="price">70 ฿</p>
-                    </div>
-                    <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+
-                            สั่งเลย</button>
-                    </div>
-                </div>
-
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-1.5">
-                        <img src="images/db/ต้มยำกุ้ง.jpg" class="rounded" id="menuImage" alt="ต้มยำกุ้ง">
-                    </div>
-                    <div class="col">
-                        <p id="menu">ต้มยำกุ้ง</p>
-                        <p id="price">50 ฿</p>
-                    </div>
-                    <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+
-                            สั่งเลย</button>
-                    </div>
-                </div>
-
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-1.5">
-                        <img src="images/db/ผัดผักรวม.jpg" class="rounded" id="menuImage" alt="ผัดผักรวม">
-                    </div>
-                    <div class="col">
-                        <p id="menu">ผัดผักรวมมิตร</p>
-                        <p id="price">70 ฿</p>
-                    </div>
-                    <div class="col-1.5">
-                        <button type="button" class="btn btn-primary" id="orderBttn">+
-                            สั่งเลย</button>
-                    </div>
-                </div>
-
-            </li>
-
-
+            </li> -->
 
         </ul>
     </div>
@@ -157,7 +90,8 @@
                 </div>
                 <div class="col-9">
                     <button type="button" class="btn btn-primary" id="footerNextBttn"
-                        onclick="document.location='./pages/2.0_orderSummary.html'">สรุปรายการ</button>
+                        onclick="countSumOrder();">สรุปรายการ</button>
+                    <!-- onclick="document.location='./pages/2.0_orderSummary.html';'countSumOrder();'">สรุปรายการ</button> -->
                 </div>
             </div>
 
@@ -244,122 +178,117 @@
 
             var products = queryData.data.data[0].products
             var sizeMenu = products.length
+
             console.log(sizeMenu)
             console.log(products[0].menuId)
+            console.log(typeof products[0].menuId)
+
 
             for (var i = 0; i < sizeMenu; i++) {
-                console.log(products[0].name[i])
+
+                var unique_id = String(products[i].menuId).replace("-", "")
+                console.log(unique_id)
+                console.log(typeof unique_id)
+
                 menuRow = document.createElement("li")
                 menuRow.className = "list-group-item";
                 menuRow.innerHTML = `
-            <div class="row">
-            <div class="col-1.5">
-                <img src="${products[i].image}.png" class="rounded" id="menuImage" alt="${products[i].name}">
-            </div>
-            <div class="col">
-            <p id="menu">${products[i].name}</p>
-            <p id="price">${products[i].price}฿</p>
-            </div>
-            <div class="col-1.5">
-            <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
-            สั่งเลย</button>
-            <div class="input-group" id="numberAdjust" style="display:none">
 
-            <button class="btn" type="button" id="adjustBttn"
-                style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
-                onclick="decreaseOrder()">-</button>
-            <input type="text" class="form-control" placeholder="" aria-label="small"
-                aria-describedby="basic-addon1" id="numberOfOrder">
-            <div class="input-group-prepend" id="inputGroup-sizing-xs">
-
-            </div>
-            <button class="btn" type="button" id="adjustBttn"
-                style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
-                onclick="increaseOrder()">+</button>
+                <div class="row">
+                    <div class="col-1.5">
+                        <img src="${products[i].image}.png" class="rounded" id="menuImage" alt="${products[i].name}">
                 </div>
-            </div>
-            </div>`;
+                        <div class="col">
+                            <p id="menu">${products[i].name}</p>
+                            <p id="price">${products[i].price}฿</p>
+                        </div>
+                        <div class="col-1.5">
+                            <button type="button" class="btn btn-primary orderBttnClass" id="orderBttn-${unique_id}" onclick="addOrder('${unique_id}')">+
+                สั่งเลย</button>
+                            <div class="input-group" id="numberAdjust-${unique_id}" style="display:none">
+
+                                <button class="btn adjustBttnClass" type="button" id="adjustBttn"
+                                    style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
+                                    onclick="decreaseOrder('${unique_id}')">-</button>
+                                <input type="text" class="form-control" placeholder="" aria-label="small"
+                                    aria-describedby="basic-addon1" id="numberOfOrder-${unique_id}"
+                                    style="font-size: 16px; width: 20px; padding: 0px; text-align: center; font-weight: 700;">
+                                    <div class="input-group-prepend" id="inputGroup-sizing-xs">
+
+                                    </div>
+                                    <button class="btn adjustBttnClass" type="button" id="adjustBttn"
+                                        style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
+                                        onclick="increaseOrder('${unique_id}')">+</button>
+                    </div>
+                            </div>
+                        </div>
+                `;
 
                 document.getElementById("cookBook").append(menuRow)
+
+                // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
             }
         }
 
+        // document.getElementById("numberAdjust").style.display = "none"
 
-
-
-
-
-
-
-
-        // var cookMenu = sizeMenu;
-
-        // for (var i = 0; i < sizeMenu; i++) {
-        //     menuRow = document.createElement("li")
-        //     menuRow.className = "list-group-item";
-        //     menuRow.innerHTML = `
-        //     <div class="row">
-        //     <div class="col-1.5">
-        //         <img src="images/db/กะเพราหมูกรอบ.jpg}" class="rounded" id="menuImage" alt="กะเพราหมูกรอบ">
-        //     </div>
-        //     <div class="col">
-        //     <p id="menu">กะเพราหมูกรอบ</p>
-        //     <p id="price">50฿</p>
-        //     </div>
-        //     <div class="col-1.5">
-        //     <button type="button" class="btn btn-primary" id="orderBttn" onclick="addOrder()">+
-        //     สั่งเลย</button>
-        //     <div class="input-group" id="numberAdjust" style="display:none">
-
-        //     <button class="btn" type="button" id="adjustBttn"
-        //         style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
-        //         onclick="decreaseOrder()">-</button>
-        //     <input type="text" class="form-control" placeholder="" aria-label="small"
-        //         aria-describedby="basic-addon1" id="numberOfOrder">
-        //     <div class="input-group-prepend" id="inputGroup-sizing-xs">
-
-        //     </div>
-        //     <button class="btn" type="button" id="adjustBttn"
-        //         style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
-        //         onclick="increaseOrder()">+</button>
-        //         </div>
-        //     </div>
-        //     </div>`;
-        //     document.getElementById("cookBook").append(menuRow)
+        // function addOrder() {
+        //     document.getElementById("orderBttn-" + ).style.display = "none"
+        //     document.getElementById("numberAdjust").style.display = "flex"
+        //     document.getElementById("numberOfOrder").value = 1
         // }
 
 
 
-        document.getElementById("numberAdjust").style.display = "none"
-
-        function addOrder() {
-            document.getElementById("orderBttn").style.display = "none"
-            document.getElementById("numberAdjust").style.display = "flex"
-            document.getElementById('numberOfOrder').value = 1
+        function addOrder(unique_id) {
+            // console.log(unique_id)
+            // console.log(typeof unique_id)
+            document.getElementById("orderBttn-" + String(unique_id)).style.display = "none"
+            document.getElementById("numberAdjust-" + unique_id).style.display = "flex"
+            document.getElementById("numberOfOrder-" + unique_id).value = 1
         }
 
-        function increaseOrder() {
-            var value = parseInt(document.getElementById('numberOfOrder').value);
+        function increaseOrder(unique_id) {
+            var value = parseInt(document.getElementById("numberOfOrder-" + unique_id).value);
             value = isNaN(value) ? 0 : value;
             value = value + 1;
-            document.getElementById('numberOfOrder').value = value;
+            document.getElementById("numberOfOrder-" + unique_id).value = value;
         }
 
-        function decreaseOrder() {
-            var value = parseInt(document.getElementById('numberOfOrder').value);
+        function decreaseOrder(unique_id) {
+            var value = parseInt(document.getElementById("numberOfOrder-" + unique_id).value);
             value = isNaN(value) ? 0 : value;
             value = value - 1;
 
             if (value > 0) {
-                document.getElementById('numberOfOrder').value = value;
+                document.getElementById("numberOfOrder-" + unique_id).value = value;
             } else {
-                document.getElementById("numberAdjust").style.display = "none"
-                document.getElementById('numberOfOrder').value = 0
-                document.getElementById("orderBttn").style.display = "block"
+                document.getElementById("numberAdjust-" + unique_id).style.display = "none"
+                document.getElementById("numberOfOrder-" + unique_id).value = 0
+                document.getElementById("orderBttn-" + unique_id).style.display = "block"
             }
 
         }
 
+        function countSumOrder() {
+            let sum = 0
+            // console.log(typeof sum)
+            for (var i = 0; i < sizeMenu; i++) {
+                let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
+                sum += parseInt(numOrder)
+                // console.log(typeof sum)
+                // console.log(document.getElementById("numberOfOrder-" + unique_id).value)
+
+                if (numOrder > 0) {
+// Add products[i].menuId in List, Plus ราคา
+                }
+            }
+
+            console.log(sum)
+            if (sum == 0) {
+                alert("เลือกเมนูอาหารก่อนนะจ๊ะ")
+            }
+        }
 
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
         document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
