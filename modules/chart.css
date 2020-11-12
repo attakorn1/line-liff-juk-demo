@@ -63,15 +63,17 @@
 
 
 :root {
-    --chartMarginBottom: 1.5rem;
-  
-    --chartBarColor: #f32a64;
+    /* --chartMarginBottom: 1.5rem; */
+    --chartMarginBottom: 15px;
+    --chartBarColor: #FFDB01;
   
     --chartColumnColor: #e6edf4;
   
     --chartAxisColor: #e6edf4;
-    --chartAxisFontSize: 0.625rem;
-    --chartAxisStrokeWidth: 0.125rem;
+    /* --chartAxisFontSize: 0.625rem; */
+    --chartAxisFontSize: 10px;
+    /* --chartAxisStrokeWidth: 0.125rem; */
+    --chartAxisStrokeWidth: 2px;
   }
   
   .chart {
