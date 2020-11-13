@@ -122,7 +122,7 @@
 
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
-        
+
         var products = queryData.data.data[0].products
         var sizeMenu = products.length
 
@@ -139,9 +139,6 @@
                 menuRow = document.createElement("li")
                 menuRow.className = "list-group-item";
                 menuRow.innerHTML = `
-
-            
-
                 <div class="row">
                     <div class="col-1.5">
                         <img src="${products[i].image}.png" class="rounded food" id="menuImage"
@@ -170,9 +167,9 @@
 
         async function main() {
 
-            await liff.init({ liffId: "1655215015-V58PdOrL" })
+                        await liff.init({ liffId: "1655215015-V58PdOrL" })
 
-        }
+                    }
 
         main()
     </script>

@@ -85,7 +85,7 @@
                 </div>
                 <div class="col-9">
                     <button type="button" class="btn btn-primary" id="footerNextBttn"
-                        onclick="document.location='./5.0_buyerSummary.html'">ยืนยันสถานที่</button>
+                        onclick="sentToSeller();">ยืนยันสถานที่</button>
                 </div>
 
 
@@ -113,6 +113,10 @@
         console.log(localStorage.getItem("placeCus"))
         console.log(localStorage.getItem("phoneCus"))
         console.log(localStorage.getItem("noteCus"))
+
+        function sentToSeller() {
+            document.location = './5.0_buyerSummary.html'
+        }
 
         async function main() {
 

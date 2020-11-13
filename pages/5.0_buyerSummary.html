@@ -60,11 +60,22 @@
 
                     <div class="row">
                         <div class="col-1.5">
-
-
                             <h2>รายการอาหาร</h2>
+                            <ul class="list-group list-group-flush" id="cookBook">
 
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-4">
+                            <!-- <p id="menu">รายการจัดส่งทันที</p> -->
+                        </div>
+                        <div class="col-5">
+                            <p style="font-size: 20px; text-align: right;">ยอดรวม</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="font-size: 22px; text-align: right;" id="price">120 ฿</p>
                         </div>
                     </div>
                 </li>
@@ -111,7 +122,7 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="row" style="width: 90%; margin: auto;">
+            <div class="row" style="width: 100%; margin:auto">
                 <div class="col">
                     <button type="button" class="btn btn-primary" id="footerNextBttn"
                         onclick="closed()">เสร็จสิ้น</button>
@@ -123,7 +134,6 @@
 
         </div>
     </footer>
-
 
     <script>
 
@@ -144,6 +154,53 @@
         document.getElementById("placeCus").innerHTML = placeCus
         document.getElementById("phoneCus").innerHTML = phoneCus
         document.getElementById("noteCus").innerHTML = noteCus
+
+        queryData = localStorage.getItem("queryData")
+        listOrder = localStorage.getItem("listOrder")
+
+        queryData = JSON.parse(queryData)
+        console.log(queryData)
+
+
+        document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
+
+        var products = queryData.data.data[0].products
+        var sizeMenu = products.length
+
+        console.log(products)
+
+        for (var i = 0; i < sizeMenu; i++) {
+
+            var unique_id = String(products[i].menuId)
+
+            if (listOrder.includes(unique_id)) {
+
+                menuRow = document.createElement("li")
+                menuRow.className = "list-group-item border-0";
+                menuRow.innerHTML = `
+                <div class="row">
+                    <div class="col-1.5">
+                        <img src="${products[i].image}.png" class="rounded food" id="menuImage"
+                            alt="${products[i].name}">
+    </div>
+                        <div class="col">
+                            <p id="menu">${products[i].name}</p>
+                        </div>
+                        <div class="col-1">
+
+                            <p>x</p>
+                        </div>
+                        <div class="col-1.5">
+                            <p>฿${products[i].price}</p>
+                        </div>
+                    </div>
+    `;
+
+                document.getElementById("cookBook").append(menuRow)
+            }
+            // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
+        }
+
 
         function closed() {
             liff.closeWindow()
