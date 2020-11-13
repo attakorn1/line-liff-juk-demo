@@ -107,18 +107,19 @@
                         onclick="document.location='./3.0_orderPayment.html'">ชำระเงิน</button>
                 </div>
             </div>
-
-
         </div>
     </footer>
 
+
     <script>
 
-        queryData = localStorage.getItem("queryData")
-        listOrder = localStorage.getItem("listOrder")
+        var queryData = localStorage.getItem("queryData")
+        var listOrder = localStorage.getItem("listOrder")
+        var listNumber = JSON.parse(localStorage.getItem("listNumber"))
+
+        // console.log(listNumber)
 
         queryData = JSON.parse(queryData)
-        console.log(queryData)
 
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
@@ -133,8 +134,6 @@
             var unique_id = String(products[i].menuId)
 
             if (listOrder.includes(unique_id)) {
-
-
 
                 menuRow = document.createElement("li")
                 menuRow.className = "list-group-item";
@@ -152,7 +151,7 @@
                             <p>x</p>
                         </div>
                         <div class="col-1.5">
-                            <p>฿${products[i].price}</p>
+                            <p>${listNumber[i]}</p>
                         </div>
                     </div>
     `;
@@ -167,9 +166,9 @@
 
         async function main() {
 
-                        await liff.init({ liffId: "1655215015-V58PdOrL" })
+            await liff.init({ liffId: "1655215015-V58PdOrL" })
 
-                    }
+        }
 
         main()
     </script>

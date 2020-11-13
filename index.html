@@ -287,9 +287,13 @@
             let sum = 0
             let cost = 0
             let listOrder = []
+            let listNumber = []
             // console.log(typeof sum)
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
+                
+                listNumber.push(String(numOrder))
+                
                 if (numOrder > 0) {
                     cost += numOrder * products[i].price
                     // console.log(products[i].price)
@@ -299,10 +303,12 @@
                 sum += parseInt(numOrder)
             }
 
-            console.log(listOrder)
-            console.log(sum)
+            console.log(listNumber)
+
             localStorage.setItem("listOrder", listOrder)
+            localStorage.setItem("listNumber", JSON.stringify(listNumber))
             localStorage.setItem("sumCost", cost)
+
             if (sum == 0) {
                 localStorage.setItem("sumCost", 0)
                 alert("เลือกเมนูอาหารก่อนนะจ๊ะ")

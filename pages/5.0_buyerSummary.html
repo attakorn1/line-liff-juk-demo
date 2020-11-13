@@ -127,11 +127,7 @@
                     <button type="button" class="btn btn-primary" id="footerNextBttn"
                         onclick="closed()">เสร็จสิ้น</button>
                 </div>
-
-
             </div>
-
-
         </div>
     </footer>
 
@@ -166,8 +162,9 @@
 
         var products = queryData.data.data[0].products
         var sizeMenu = products.length
+        var listNumber = JSON.parse(localStorage.getItem("listNumber"))
 
-        console.log(products)
+        // console.log(products)
 
         for (var i = 0; i < sizeMenu; i++) {
 
@@ -191,7 +188,7 @@
                             <p>x</p>
                         </div>
                         <div class="col-1.5">
-                            <p>฿${products[i].price}</p>
+                            <p>${listNumber[i]}</p>
                         </div>
                     </div>
     `;
