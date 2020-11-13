@@ -279,12 +279,29 @@
         document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
 
 
-        async function main() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const liffId = urlParams.get('liffId');
-            await liff.init({ liffId: liffId })
+        // async function main() {
+        //     const urlParams = new URLSearchParams(window.location.search);
+        //     const liffId = urlParams.get('liffId');
+        //     await liff.init({ liffId: liffId })
 
-        }
+        // }
+
+        async function getUserProfile() {
+            const profile = await liff.getProfile()
+            localStorage.setItem("userId", profile.userId)
+            console.log(profile.userId)
+            
+         }
+        async function main() {
+            liff.ready.then(() => {
+                if (liff.isLoggedIn()) {
+                    getUserProfile()
+                } else {
+                    liff.login()
+                }
+            })
+            await liff.init({ liffId: liffId })
+            }
 
         main()
 
