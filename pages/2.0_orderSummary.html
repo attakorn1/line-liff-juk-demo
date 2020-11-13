@@ -120,17 +120,19 @@
         console.log(queryData.data)
         console.log("hello world2")
         console.log(localStorage.getItem("products"))
+        console.log("hello world0")
+        console.log((localStorage.getItem("products"))[0].menuId)
         console.log("hello worlda")
         console.log(products)
         console.log("hello worldb")
-        console.log(products[0])
+        console.log(products[0].menuId)
 
         queryData = JSON.parse(queryData)
 
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
 
-        var products = queryData.data.data[0].products
+        // var products = queryData.data.data[0].products
         var sizeMenu = products.length
 
         // console.log(products)
