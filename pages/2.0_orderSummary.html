@@ -109,25 +109,22 @@
 
     <script>
 
-        var queryData = JSON.parse(localStorage.getItem("queryData"))
+        // var queryData = JSON.parse(localStorage.getItem("queryData"))
         var listOrder = localStorage.getItem("listOrder")
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
         var products = JSON.parse(localStorage.getItem("products"))
 
 
-        console.log(queryData)
+        console.log(listOrder)
         console.log("hello world1")
-        console.log(queryData.data)
+        console.log(JSON.parse(localStorage.getItem("listOrder")))
         console.log("hello world2")
-        console.log(localStorage.getItem("products"))
-        console.log("hello world0")
-        console.log((localStorage.getItem("products"))[0].menuId)
-        console.log("hello worlda")
         console.log(products)
         console.log("hello worldb")
         console.log(products[0].menuId)
+        console.log("hello worldb")
 
-        queryData = JSON.parse(queryData)
+        // queryData = JSON.parse(queryData)
 
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
@@ -140,6 +137,9 @@
         for (var i = 0; i < sizeMenu; i++) {
 
             var unique_id = String(products[i].menuId)
+
+            console.log(unique_id)
+            console.log(listOrder)
 
             if (listOrder.includes(unique_id)) {
 
