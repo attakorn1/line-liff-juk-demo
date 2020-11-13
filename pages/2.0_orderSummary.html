@@ -95,8 +95,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <button type="button" class="btn btn-primary" id="footerBackBttn"
-                        onclick="goBack();">
+                    <button type="button" class="btn btn-primary" id="footerBackBttn" onclick="goBack();">
                         กลับ </button>
                 </div>
                 <div class="col-9">
@@ -115,6 +114,8 @@
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
         var products = JSON.parse(localStorage.getItem("products"))
 
+        console.log(queryData)
+        console.log("hello world")
         console.log(products)
 
         queryData = JSON.parse(queryData)
@@ -165,7 +166,7 @@
             // window.history.back();
             // document.location='../index.html'
             let location = localStorage.getItem("locationHref")
-            document.location=location
+            document.location = location
         }
 
 
@@ -176,7 +177,7 @@
         // }
 
         async function main() {
-            await liff.init({ liffId: localStorage.getItem("liffId")})
+            await liff.init({ liffId: localStorage.getItem("liffId") })
 
         }
 
