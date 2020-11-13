@@ -16,12 +16,12 @@
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script src="../js/index.js"></script>
 
-<style>
-    p {
-        font-size: 20px;
-        font-weight: 600;
-    }
-</style>
+    <style>
+        p {
+            font-size: 20px;
+            font-weight: 600;
+        }
+    </style>
 
 
     <title>JUK JUK</title>
@@ -60,14 +60,25 @@
 
                     <div class="row">
                         <div class="col-1.5">
-
-
                             <h2>รายการอาหาร</h2>
-
+                            <ul class="list-group list-group-flush" id="cookBook">
 
                         </div>
                     </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <!-- <p id="menu">รายการจัดส่งทันที</p> -->
+                        </div>
+                        <div class="col-5">
+                            <p style="font-size: 20px; text-align: right;">ยอดรวม</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="font-size: 22px; text-align: right;" id="price">120 ฿</p>
+                        </div>
+                    </div>
                 </li>
+
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-1.5">
@@ -115,11 +126,7 @@
                 <div class="col">
                     <button type="button" class="btn btn-primary" id="footerNextBttn">เสร็จสิ้น</button>
                 </div>
-
-
             </div>
-
-
         </div>
     </footer>
 
@@ -145,50 +152,94 @@
         document.getElementById("phoneCus").innerHTML = phoneCus
         document.getElementById("noteCus").innerHTML = noteCus
 
+        queryData = localStorage.getItem("queryData")
+        listOrder = localStorage.getItem("listOrder")
+        queryData = JSON.parse(queryData)
+
+        document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
+
+        var products = queryData.data.data[0].products
+        var sizeMenu = products.length
+        var listNumber = JSON.parse(localStorage.getItem("listNumber"))
+
+        for (var i = 0; i < sizeMenu; i++) {
+
+            var unique_id = String(products[i].menuId)
+
+            if (listOrder.includes(unique_id)) {
+
+                menuRow = document.createElement("li")
+                menuRow.className = "list-group-item border-0";
+                menuRow.innerHTML = `
+    <div class="row">
+        <div class="col-1.5">
+            <img src="${products[i].image}" class="rounded food" id="menuImage"
+                alt="${products[i].name}">
+</div>
+            <div class="col">
+                <p id="menu">${products[i].name}</p>
+            </div>
+            <div class="col-1">
+
+                <p>x</p>
+            </div>
+            <div class="col-1.5">
+                <p>${listNumber[i]}</p>
+            </div>
+        </div>
+`;
+
+                document.getElementById("cookBook").append(menuRow)
+            }
+            // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
+        }
 
 
-                
-        $("button").click(function(e) {
-                e.preventDefault();
-                let orderData = {"userId": localStorage.getItem("userId"), "paymentMethod": "cod",
+
+
+        $("button").click(function (e) {
+            e.preventDefault();
+            let orderData = {
+                "userId": localStorage.getItem("userId"), "paymentMethod": "cod",
                 "order_list": JSON.parse(localStorage.getItem("order_list")),
-                "storeId":  localStorage.getItem("storeId"), "createDate": "1605261606487", 
-                "total_price": localStorage.getItem("sumCost"),  "status": "pending",
-                "userContact" : {"name" : nameCus, "tel":phoneCus, "pick_up":placeCus}}
-                $.ajax({
-                    type: "POST",
-                    url: "https://linehack-api-j3f2uydk7a-as.a.run.app/createOrder",
-                    // data: JSON.stringify({"id" : "vlmxLUoT9JhaF2KtnpAH",   "typeSource" : "store"}),
-                    data: JSON.stringify(orderData),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function(result) {
-                        alert('ok');
-                        closed()
-                    },
-                    error: function(result) {
-                        alert('error');
-                    }
-                });
+                "storeId": localStorage.getItem("storeId"), "createDate": "1605261606487",
+                "total_price": localStorage.getItem("sumCost"), "status": "pending",
+                "userContact": { "name": nameCus, "tel": phoneCus, "pick_up": placeCus }
+            }
+            $.ajax({
+                type: "POST",
+                url: "https://linehack-api-j3f2uydk7a-as.a.run.app/createOrder",
+                // data: JSON.stringify({"id" : "vlmxLUoT9JhaF2KtnpAH",   "typeSource" : "store"}),
+                data: JSON.stringify(orderData),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (result) {
+                    alert('ok');
+                    closed()
+                },
+                error: function (result) {
+                    alert('error');
+                }
+            });
         });
 
 
         function closed() {
             liff.closeWindow()
-            
+
         }
 
         async function getUserProfile() {
             const profile = await liff.getProfile()
             localStorage.setItem("userId", profile.userId)
             console.log(profile.userId)
-            
-         }
+
+        }
         async function main() {
             await liff.init({ liffId: localStorage.get("liffId") })
             if (liff.isLoggedIn()) {
                 getUserProfile()
-            } 
+            }
         }
         main() 
     </script>
