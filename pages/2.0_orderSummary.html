@@ -109,7 +109,7 @@
 
     <script>
 
-        var queryData = localStorage.getItem("queryData")
+        var queryData = JSON.parse(localStorage.getItem("queryData"))
         var listOrder = localStorage.getItem("listOrder")
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
         var products = JSON.parse(localStorage.getItem("products"))
@@ -130,7 +130,7 @@
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
 
-        // var products = queryData.data.data[0].products
+        var products = queryData.data.data[0].products
         var sizeMenu = products.length
 
         // console.log(products)
