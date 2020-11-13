@@ -166,12 +166,13 @@
 
         var sizeMenu = products.length
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
+        var mylist = localStorage.getItem("mylist")
 
         for (var i = 0; i < sizeMenu; i++) {
 
             var unique_id = String(products[i].menuId)
 
-            if (listOrder.includes(unique_id)) {
+            if (mylist.includes(unique_id)) {
 
                 menuRow = document.createElement("li")
                 menuRow.className = "list-group-item border-0";
