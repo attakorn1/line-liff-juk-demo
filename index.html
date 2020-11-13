@@ -111,7 +111,7 @@
     <script>
         // localStorage.clear();
         const urlParams = new URLSearchParams(window.location.search);
-        console.log(urlParams)
+        console.log(window.location.href)
         const liffId = urlParams.get('liffId');
         const storeId = urlParams.get('storeId');
         localStorage.setItem("storeId", storeId)
