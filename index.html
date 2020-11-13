@@ -123,11 +123,11 @@
             success: function (data) {
                 queryData = data;
                 if (queryData.data.status = true) {
-                    // console.log(queryData)
+                    console.log(queryData)
                     var products = queryData.data.data[0].products
                     localStorage.setItem("products", JSON.stringify(products))
 
-                    // console.log(products)
+                    console.log(products)
                     localStorage.setItem("queryData", JSON.stringify(queryData))
 
                     var sizeMenu = products.length
