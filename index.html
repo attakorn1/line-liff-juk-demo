@@ -253,7 +253,10 @@
             localStorage.setItem("listOrder", listOrder)
             localStorage.setItem("listNumber", JSON.stringify(listNumber))
             localStorage.setItem("sumCost", cost)
-            if (sum == 0) {
+            
+            console.log(sum)
+
+            if (cost == 0) {
                 localStorage.setItem("sumCost", 0)
                 alert("เลือกเมนูอาหารก่อนนะจ๊ะ")
             }
