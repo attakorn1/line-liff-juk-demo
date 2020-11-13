@@ -34,7 +34,7 @@
         <div class="container mt=20">
             <div class="row">
                 <div class="col-1.5">
-                    <h1 id="topic">ตามสั่งป้าแจ๋วตึก A</h1>
+                    <h1 class="restaurantName" id="topic" style="text-align: left;">ป้าแจ๋ว</h1>
                 </div>
                 <div class="col">
                     <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span>
@@ -91,7 +91,6 @@
                 <div class="col-9">
                     <button type="button" class="btn btn-primary" id="footerNextBttn"
                         onclick="countSumOrder();">สรุปรายการ</button>
-                    <!-- onclick="document.location='./pages/2.0_orderSummary.html';'countSumOrder();'">สรุปรายการ</button> -->
                 </div>
             </div>
 
@@ -178,17 +177,20 @@
 
             var products = queryData.data.data[0].products
             var sizeMenu = products.length
+            localStorage.setItem("restaurantName", queryData.data.data[0].storeName)
 
             console.log(sizeMenu)
             console.log(products[0].menuId)
             console.log(typeof products[0].menuId)
-
+            console.log(queryData.data.data[0].storeName)
+            // document.getElementsByClassName("restaurantName").innerHTML = queryData.data.data[0].storeName
+            document.getElementById("topic").innerHTML = localStorage.getItem("restaurantName")
 
             for (var i = 0; i < sizeMenu; i++) {
 
                 var unique_id = String(products[i].menuId).replace("-", "")
-                console.log(unique_id)
-                console.log(typeof unique_id)
+                // console.log(unique_id)
+                // console.log(typeof unique_id)
 
                 menuRow = document.createElement("li")
                 menuRow.className = "list-group-item";
@@ -200,7 +202,7 @@
                 </div>
                         <div class="col">
                             <p id="menu">${products[i].name}</p>
-                            <p id="price">${products[i].price}฿</p>
+                            <p id="price">฿${products[i].price}</p>
                         </div>
                         <div class="col-1.5">
                             <button type="button" class="btn btn-primary orderBttnClass" id="orderBttn-${unique_id}" onclick="addOrder('${unique_id}')">+
@@ -272,21 +274,26 @@
 
         function countSumOrder() {
             let sum = 0
+            let cost = 0
             // console.log(typeof sum)
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
-                sum += parseInt(numOrder)
-                // console.log(typeof sum)
-                // console.log(document.getElementById("numberOfOrder-" + unique_id).value)
-
                 if (numOrder > 0) {
-// Add products[i].menuId in List, Plus ราคา
+                    cost += numOrder * products[i].price
+                    console.log(products[i].price)
+                    console.log(cost)
                 }
+                sum += parseInt(numOrder)
             }
 
             console.log(sum)
+            localStorage.setItem("sumCost", cost)
             if (sum == 0) {
+                localStorage.setItem("sumCost", 0)
                 alert("เลือกเมนูอาหารก่อนนะจ๊ะ")
+            }
+            else {
+                document.location = './pages/2.0_orderSummary.html';
             }
         }
 

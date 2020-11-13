@@ -15,7 +15,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script src="./js/index.js"></script>
-    
+
     <title>JUK JUK</title>
 </head>
 
@@ -34,7 +34,7 @@
             <div class="container mt=20">
                 <div class="row">
                     <div class="col-1.5">
-                        <h1 id="topic">สรุปรายการ</h1>
+                        <h1 id="topic" style="text-align: left;">สรุปรายการ</h1>
                     </div>
                     <div class="col">
                         <!-- <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span> -->
@@ -62,10 +62,10 @@
                     </div>
                     <div class="col-1">
 
-                        <p id="price">x</p>
+                        <p>x</p>
                     </div>
                     <div class="col-1.5">
-                        <p id="price">50 ฿</p>
+                        <p>50 ฿</p>
                     </div>
                 </div>
 
@@ -80,11 +80,11 @@
 
                     </div>
                     <div class="col-1">
-                        <p id="price">x</p>
+                        <p>x</p>
 
                     </div>
                     <div class="col-1.5">
-                        <p id="price">50 ฿</p>
+                        <p>50 ฿</p>
                     </div>
 
                 </div>
@@ -92,16 +92,14 @@
             </li>
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-6">
                         <p id="menu">รายการจัดส่งทันที</p>
-
                     </div>
-                    <div class="col">
-                        <p id="price">ยอดรวม</p>
-
+                    <div class="col-4">
+                        <p style="font-size: 18px; text-align: right;">ยอดรวม</p>
                     </div>
-                    <div class="col-1.5">
-                        <p id="price">120 ฿</p>
+                    <div class="col-2">
+                        <p style="font-size: 22px; text-align: right;" id="price">120 ฿</p>
                     </div>
                 </div>
 
@@ -131,6 +129,9 @@
 
 
     <script>
+
+        document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
+        document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
         async function main() {
 
             await liff.init({ liffId: "1655215015-V58PdOrL" })

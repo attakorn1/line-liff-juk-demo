@@ -15,7 +15,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script src="./js/index.js"></script>
-    
+
     <title>JUK JUK</title>
 </head>
 
@@ -33,45 +33,50 @@
 
             <div class="container mt=20">
                 <div class="row">
-                    <div class="col-1.5">
-                        <h1 id="topic">เลือกวิธีการจ่าย</h1>
-                    </div>
                     <div class="col">
-                        <!-- <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span> -->
+                        <h1 id="topic" style="text-align: left;">เลือกวิธีการจ่าย</h1>
                     </div>
+
                 </div>
                 <div class="row">
-                    <p id="topic-second">ยอดรวม 120 ฿</p>
+                    <p id="topic-second">ยอดรวม
+                    <p id="sumaPrice">ยอดรวม 120 ฿</p>
+                    </p>
+
                 </div>
 
             </div>
         </div>
 
 
-        <div class="container py-4">
+        <div class="container">
 
             <div class="row">
+                <div class="col">
+                    <button type="button" id="paymentMethodBttn"
+                        onclick="document.location='./3.5_orderSlip.html'">
+                        <p>โอนเงินและส่ง Slip ทันที</p>
+                    </button>
 
-                <button type="button" class="block" id="paymentMethodBttn"
-                    onclick="document.location='./3.5_orderSlip.html'">
-                    <p id="bank-head">โอนเงินและส่ง Slip</p>
-                </button>
+                </div>
+
 
 
 
             </div>
             <div class="row">
-
-                <button type="button" class="block" id="paymentMethodBttn"
-                    onclick="document.location='./4.0_orderPlace.html'">
-                    <p id="bank-head">จ่ายด้วยเงินสด</p>
-                </button>
-
+                <div class="col-12">
+                    <button type="button" id="paymentMethodBttn"
+                        onclick="document.location='./4.0_orderPlace.html'">
+                        <p>จ่ายด้วยเงินสดหรือสแกน QR Code ที่สถานที่นัดหมาย</p>
+                    </button>
+                </div>
             </div>
 
 
         </div>
     </div>
+    
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -93,6 +98,8 @@
 
 
     <script>
+        document.getElementById("sumaPrice").innerHTML = '฿' + localStorage.getItem("sumCost");
+
         async function main() {
 
             await liff.init({ liffId: "1655215015-V58PdOrL" })
