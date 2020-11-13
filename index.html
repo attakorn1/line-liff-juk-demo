@@ -11,9 +11,14 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet"> -->
 
-
-    <!-- <script src="./js/vconsole.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.4/vconsole.min.js" integrity="sha512-/9dW/D2rWkAaLlyBbFEY50QbnpNP97+j2G9X/8A44xVTvEwYe8jUK3TEANhUbZ3Avr8UDIbcI8zHowc3ibGD+A==" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.4/vconsole.min.js" integrity="sha512-/9dW/D2rWkAaLlyBbFEY50QbnpNP97+j2G9X/8A44xVTvEwYe8jUK3TEANhUbZ3Avr8UDIbcI8zHowc3ibGD+A==" crossorigin="anonymous"></script> -->
+    <script src="./js/vconsole.min.js"></script>
+    <!-- <script>
+      var vConsole = new VConsole()
+      console.log("Hello World!")
+    </script> -->
+    
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
@@ -105,7 +110,6 @@
         localStorage.clear();
         const urlParams = new URLSearchParams(window.location.search);
         const liffId = urlParams.get('liffId');
-        const urlParams = new URLSearchParams(window.location.search);
         const storeId = urlParams.get('storeId');
         localStorage.setItem("storeId", storeId)
         var queryData
@@ -123,7 +127,7 @@
                     var products = queryData.data.data[0].products
                     localStorage.setItem("products", JSON.stringify(products))
 
-                    console.log(products)
+                    // console.log(products)
                     localStorage.setItem("queryData", JSON.stringify(queryData))
 
                     var sizeMenu = products.length
@@ -186,7 +190,7 @@
         sizeMenu = localStorage.getItem("sizeMenu")
         products = JSON.parse(localStorage.getItem("products"))
 
-        console.log(products)
+        // console.log(products)
 
         function addOrder(unique_id) {
             // console.log(unique_id)
@@ -264,12 +268,6 @@
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
         document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
 
-        let vconsole = urlParams.get('vconsole');
-        if (vconsole && vconsole == "1") {
-            var vConsole = new VConsole();
-            console.log('Hello world');
-        }
-
 
         async function main() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -279,6 +277,13 @@
         }
 
         main()
+
+        let vconsole = urlParams.get('vConsole');
+        if (vconsole && vconsole == "1") {
+            var vConsole = new VConsole();
+            console.log('Hello world');
+        }
+
     </script>
 </body>
 
