@@ -241,11 +241,15 @@
 
         }
         async function main() {
-            await liff.init({ liffId: localStorage.get("liffId") })
-            if (liff.isLoggedIn()) {
-                getUserProfile()
+            liff.ready.then(() => {
+                if (liff.isLoggedIn()) {
+                    getUserProfile()
+                } else {
+                    liff.login()
+                }
+            })
+                await liff.init({ liffId: localStorage.get("liffId") })
             }
-        }
         main() 
     </script>
 
