@@ -164,9 +164,16 @@
         }
 
 
-        async function main() {
+        // async function main() {
 
-            await liff.init({ liffId: "1655215015-V58PdOrL" })
+        //     await liff.init({ liffId: "1655215015-V58PdOrL" })
+
+        // }
+
+        async function main() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const liffId = urlParams.get('liffId');
+            await liff.init({ liffId: liffId })
 
         }
 
