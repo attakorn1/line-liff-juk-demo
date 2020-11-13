@@ -289,27 +289,66 @@
 
         }
 
+        // function countSumOrder() {
+        //     let sum = 0
+        //     let cost = 0
+        //     let listOrder = []
+        //     let listNumber = []
+        //     // console.log(typeof sum)
+        //     for (var i = 0; i < sizeMenu; i++) {
+        //         let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
+        //         listNumber.push(String(numOrder))
+                
+        //         if (numOrder > 0) {
+        //             cost += numOrder * products[i].price
+        //             // console.log(products[i].price)
+        //             // console.log(cost)
+        //             listOrder.push(String(products[i].menuId))
+        //         }
+        //         sum += parseInt(numOrder)
+        //     }
+
+        //     console.log(listOrder)
+        //     console.log(sum)
+        //     localStorage.setItem("listOrder", listOrder)
+        //     localStorage.setItem("listNumber", JSON.stringify(listNumber))
+        //     localStorage.setItem("sumCost", cost)
+        //     if (sum == 0) {
+        //         localStorage.setItem("sumCost", 0)
+        //         alert("เลือกเมนูอาหารก่อนนะจ๊ะ")
+        //     }
+        //     else {
+        //         document.location = './pages/2.0_orderSummary.html';
+        //     }
+        // }
+
         function countSumOrder() {
             let sum = 0
             let cost = 0
             let listOrder = []
             let listNumber = []
-            // console.log(typeof sum)
+            let listprice =[]
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
                 listNumber.push(String(numOrder))
                 
                 if (numOrder > 0) {
                     cost += numOrder * products[i].price
-                    // console.log(products[i].price)
-                    // console.log(cost)
-                    listOrder.push(String(products[i].menuId))
+                    listOrder.push(String(products[i].name))
+                    listprice.push(products[i].price)
                 }
                 sum += parseInt(numOrder)
+                
+                
             }
+            let order_list =[]
+            listOrder.forEach((menu_name, index) => {
+                const amount = listNumber[index];
+                const price = listprice[index];
+                order_list.push({"name": menu_name, "amount": amount, "price" : price})
+            });
+            localStorage.setItem("oder_list", JSON.stringify(order_list))
 
-            console.log(listOrder)
-            console.log(sum)
             localStorage.setItem("listOrder", listOrder)
             localStorage.setItem("listNumber", JSON.stringify(listNumber))
             localStorage.setItem("sumCost", cost)
@@ -321,7 +360,6 @@
                 document.location = './pages/2.0_orderSummary.html';
             }
         }
-
 
         function closed() {
             liff.closeWindow()
