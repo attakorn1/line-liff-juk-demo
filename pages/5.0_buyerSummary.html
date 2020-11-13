@@ -158,7 +158,8 @@
                 $.ajax({
                     type: "POST",
                     url: "https://linehack-api-j3f2uydk7a-as.a.run.app/createOrder",
-                    data: JSON.stringify({"id" : "vlmxLUoT9JhaF2KtnpAH",   "typeSource" : "store"}),
+                    // data: JSON.stringify({"id" : "vlmxLUoT9JhaF2KtnpAH",   "typeSource" : "store"}),
+                    data: JSON.stringify(orderData),
                     contentType: "application/json; charset=utf-8",
                     dataType: "json",
                     success: function(result) {

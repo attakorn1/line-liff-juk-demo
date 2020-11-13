@@ -133,15 +133,90 @@
 
     <script>
 
+        var queryData2 = {
+            "data": {
+                "data": [
+                    {
+                        "account_banking": {
+                            "bank": "kbank",
+                            "firstname": "Thanakorn",
+                            "lastname": "Thipgrathok",
+                            "number": "0502624687"
+                        },
+                        "created_at": 1605093577435,
+                        "group": [
+                            {
+                                "groupId": "C6f2f2d816d8fb70ed25433c67ed23d73",
+                                "status": true
+                            }
+                        ],
+                        "open": {
+                            "day": [
+                                "mon",
+                                "tue",
+                                "wed"
+                            ],
+                            "time": [
+                                "00:00",
+                                "23:55"
+                            ]
+                        },
+                        "order": true,
+                        "preorder": true,
+                        "products": [
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.jpg?alt=media&token=640c036e-35ae-4cbf-bff3-f29fd0a1e5f9",
+                                "menuId": "1605093577435-00001",
+                                "name": "ข้าวกะเพราหมูกรอบ",
+                                "price": 50,
+                                "status": true
+                            },
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=37c5811e-d2cf-48dd-ab35-8b9667e23b70",
+                                "menuId": "1605093577435-00002",
+                                "name": "ข้าวผัดกุ้ง",
+                                "price": 50,
+                                "status": true
+                            },
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%A2%E0%B8%B3%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=c0ad1750-6f7d-4632-b33d-69ed7c3a5498",
+                                "menuId": "1605093577435-00003",
+                                "name": "ต้มยำกุ้ง",
+                                "price": 80,
+                                "status": true
+                            },
+                            {
+                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%88%E0%B8%B7%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%B9%E0%B9%89.jpg?alt=media&token=7a49c324-e34d-427c-9a84-d303d44f7378",
+                                "menuId": "1605093577435-00004",
+                                "name": "แกงจืดเต้าหู้",
+                                "price": 70,
+                                "status": true
+                            }
+                        ],
+                        "storeId": "1605093577435",
+                        "storeImage": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/gourmet-burger-scaled.jpg?alt=media&token=b2122426-efcc-49ab-849d-4c9112f71908",
+                        "storeName": "คิวหิวข้าว1",
+                        "total_crap": 35,
+                        "userId": "Ubca3d3c0cdefb9bcc4b09778cbd30b4e"
+                    }
+                ],
+                "status": true
+            }
+        };
+
+
+
+
+
         queryData = localStorage.getItem("queryData")
         queryData = JSON.parse(queryData)
 
         document.getElementById("sumaPrice").innerHTML = '฿' + localStorage.getItem("sumCost");
 
-        let bank = queryData.data.data[0].account_banking.bank
-        let first_name = queryData.data.data[0].account_banking.firstname
-        let last_name = queryData.data.data[0].account_banking.lastname
-        let number = queryData.data.data[0].account_banking.number
+        let bank = queryData2.data.data[0].account_banking.bank
+        let first_name = queryData2.data.data[0].account_banking.firstname
+        let last_name = queryData2.data.data[0].account_banking.lastname
+        let number = queryData2.data.data[0].account_banking.number
 
         let name = first_name + "  " + last_name
 
@@ -149,11 +224,11 @@
         document.getElementById("bank_name").innerHTML = bank
         document.getElementById("name").innerHTML = name
 
-        console.log(queryData.data.data[0].account_banking)
-        console.log(bank)
-        console.log(first_name)
-        console.log(last_name)
-        console.log(name)
+        // console.log(queryData.data.data[0].account_banking)
+        // console.log(bank)
+        // console.log(first_name)
+        // console.log(last_name)
+        // console.log(name)
 
 
 
