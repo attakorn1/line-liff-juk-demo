@@ -231,7 +231,8 @@
 
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
-                console.log(numOrder)
+                console.log(products[i].menuId)
+                // console.log(numOrder)
                 listNumber.push(String(numOrder))
                 // console.log(listNumber)
                 if (numOrder > 0) {
