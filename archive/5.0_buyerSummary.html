@@ -60,11 +60,22 @@
 
                     <div class="row">
                         <div class="col-1.5">
-
-
                             <h2>รายการอาหาร</h2>
+                            <ul class="list-group list-group-flush" id="cookBook">
 
+                            </ul>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-4">
+                            <!-- <p id="menu">รายการจัดส่งทันที</p> -->
+                        </div>
+                        <div class="col-5">
+                            <p style="font-size: 20px; text-align: right;">ยอดรวม</p>
+                        </div>
+                        <div class="col-3">
+                            <p style="font-size: 22px; text-align: right;" id="price">120 ฿</p>
                         </div>
                     </div>
                 </li>
@@ -111,18 +122,14 @@
 
     <footer class="footer">
         <div class="container">
-            <div class="row" style="width: 90%; margin: auto;">
+            <div class="row" style="width: 100%; margin:auto">
                 <div class="col">
-                    <button type="button" class="btn btn-primary" id="footerNextBttn">เสร็จสิ้น</button>
+                    <button type="button" class="btn btn-primary" id="footerNextBttn"
+                        onclick="closed()">เสร็จสิ้น</button>
                 </div>
-
-
             </div>
-
-
         </div>
     </footer>
-
 
     <script>
 
@@ -134,7 +141,6 @@
             document.getElementById("payMethod").innerHTML = 'โอนเงินและส่ง Slip ทันที'
         }
 
-
         let nameCus = localStorage.getItem("nameCus")
         let placeCus = localStorage.getItem("placeCus")
         let phoneCus = localStorage.getItem("phoneCus")
@@ -145,49 +151,60 @@
         document.getElementById("phoneCus").innerHTML = phoneCus
         document.getElementById("noteCus").innerHTML = noteCus
 
+        queryData = localStorage.getItem("queryData")
+        listOrder = localStorage.getItem("listOrder")
+
+        queryData = JSON.parse(queryData)
+        console.log(queryData)
 
 
-                
-        $("button").click(function(e) {
-                e.preventDefault();
-                let orderData = {"userId": localStorage.getItem("userId"), "paymentMethod": "cod",
-                "order_list": localStorage.getItem("order_list"), 
-                "storeId":  localStorage.getItem("storeId"), "createDate": "1605261606487", 
-                "total_price": localStorage.getItem("sumCost"),  "status": "pending",
-                "userContact" : {"name" : nameCus, "tel":phoneCus, "pick_up":placeCus}}
-                $.ajax({
-                    type: "POST",
-                    url: "https://linehack-api-j3f2uydk7a-as.a.run.app/createOrder",
-                    data: JSON.stringify({"id" : "vlmxLUoT9JhaF2KtnpAH",   "typeSource" : "store"}),
-                    contentType: "application/json; charset=utf-8",
-                    dataType: "json",
-                    success: function(result) {
-                        alert('ok');
-                        closed()
-                    },
-                    error: function(result) {
-                        alert('error');
-                    }
-                });
-        });
+        document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
+
+        var products = queryData.data.data[0].products
+        var sizeMenu = products.length
+        var listNumber = JSON.parse(localStorage.getItem("listNumber"))
+
+        // console.log(products)
+
+        for (var i = 0; i < sizeMenu; i++) {
+
+            var unique_id = String(products[i].menuId)
+
+            if (listOrder.includes(unique_id)) {
+
+                menuRow = document.createElement("li")
+                menuRow.className = "list-group-item border-0";
+                menuRow.innerHTML = `
+                <div class="row">
+                    <div class="col-1.5">
+                        <img src="${products[i].image}" class="rounded food" id="menuImage"
+                            alt="${products[i].name}">
+    </div>
+                        <div class="col">
+                            <p id="menu">${products[i].name}</p>
+                        </div>
+                        <div class="col-1">
+
+                            <p>x</p>
+                        </div>
+                        <div class="col-1.5">
+                            <p>${listNumber[i]}</p>
+                        </div>
+                    </div>
+    `;
+
+                document.getElementById("cookBook").append(menuRow)
+            }
+            // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
+        }
 
 
         function closed() {
             liff.closeWindow()
-            
         }
-
-        async function getUserProfile() {
-            const profile = await liff.getProfile()
-            localStorage.setItem("userId", profile.userId)
-            console.log(profile.userId)
-            
-         }
         async function main() {
-            await liff.init({ liffId: localStorage.get("liffId") })
-            if (liff.isLoggedIn()) {
-                getUserProfile()
-            } 
+
+            await liff.init({ liffId: localStorage.getItem("liffId")})
         }
         main() 
     </script>

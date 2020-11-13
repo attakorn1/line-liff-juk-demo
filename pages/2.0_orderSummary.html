@@ -157,11 +157,13 @@
             }
             // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
         }
-
+        
+        console.log(localStorage.getItem("locationHref"))
         function goBack() {
             // window.history.back();
             // document.location='../index.html'
             let location = localStorage.getItem("locationHref")
+            
             document.location='location'
         }
 
