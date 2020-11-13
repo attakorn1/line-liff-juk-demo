@@ -32,17 +32,20 @@
     <div class="container" style="padding-top:15px;">
 
         <div class="container mt=20">
-            <div class="row">
-                <div class="col-1.5">
-                    <h1 class="restaurantName" id="topic" style="text-align: left;">ป้าแจ๋ว</h1>
+            <div class="col">
+                <div class="row">
+                    <div class="col-1.5">
+                        <h1 class="restaurantName" id="topic" style="text-align: left;">ป้าแจ๋ว</h1>
+                    </div>
+                    <div class="col">
+                        <span class="badge badge-danger" style="margin-top: 10px; font-size: 14px;">เหลือ 1 ชั่วโมง</span>
+                    </div>
                 </div>
-                <div class="col">
-                    <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span>
+                <div class="row">
+                    <p id="line_name" style="font-size: 16px;">By jaewjaew</p>
                 </div>
             </div>
-            <div class="row">
-                <p id="line_name">By jaewjaew</p>
-            </div>
+
         </div>
 
         <ul class="list-group list-group-flush" id="cookBook">
@@ -85,8 +88,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-3">
-                    <button type="button" class="btn btn-primary" id="footerBackBttn"
-                        onclick="document.location='./sellerReport.html'">กลับ </button>
+                    <button type="button" class="btn btn-primary" id="footerBackBttn" onclick="closed();">กลับ </button>
                 </div>
                 <div class="col-9">
                     <button type="button" class="btn btn-primary" id="footerNextBttn"
@@ -173,16 +175,25 @@
             }
         };
 
+        
+        
+
+
         if (queryData.data.data[0].status = true) {
 
             var products = queryData.data.data[0].products
+            // localStorage.setItem("queryData", products)
+
+            localStorage.setItem("queryData",JSON.stringify(queryData))
+            // console.log(localStorage.getItem("queryData"))
+
             var sizeMenu = products.length
             localStorage.setItem("restaurantName", queryData.data.data[0].storeName)
 
-            console.log(sizeMenu)
-            console.log(products[0].menuId)
-            console.log(typeof products[0].menuId)
-            console.log(queryData.data.data[0].storeName)
+            
+            // console.log(products[0].menuId)
+            // console.log(typeof products[0].menuId)
+            // console.log(queryData.data.data[0].storeName)
             // document.getElementsByClassName("restaurantName").innerHTML = queryData.data.data[0].storeName
             document.getElementById("topic").innerHTML = localStorage.getItem("restaurantName")
 
@@ -275,6 +286,7 @@
         function countSumOrder() {
             let sum = 0
             let cost = 0
+            let listOrder = []
             // console.log(typeof sum)
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
@@ -282,11 +294,14 @@
                     cost += numOrder * products[i].price
                     console.log(products[i].price)
                     console.log(cost)
+                    listOrder.push(String(products[i].menuId))
                 }
                 sum += parseInt(numOrder)
             }
 
+            console.log(listOrder)
             console.log(sum)
+            localStorage.setItem("listOrder", listOrder)
             localStorage.setItem("sumCost", cost)
             if (sum == 0) {
                 localStorage.setItem("sumCost", 0)
@@ -295,6 +310,11 @@
             else {
                 document.location = './pages/2.0_orderSummary.html';
             }
+        }
+
+
+        function closed() {
+            liff.closeWindow()
         }
 
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')

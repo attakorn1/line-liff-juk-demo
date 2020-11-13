@@ -36,21 +36,19 @@
                     <div class="col-1.5">
                         <h1 id="topic" style="text-align: left;">สรุปรายการ</h1>
                     </div>
-                    <div class="col">
-                        <!-- <span class="badge badge-danger">เหลือ 1 ชั่วโมง</span> -->
-                    </div>
+
                 </div>
                 <div class="row">
                     <p id="topic-second">ตามสั่งป้าแจ๋วตึก A</p>
                 </div>
                 <div class="row">
-                    <p id="line_name">By jaewjaew</p>
+                    <p id="line_name" style="font-size: 16px;">By jaewjaew</p>
                 </div>
             </div>
         </div>
 
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">
+        <ul class="list-group list-group-flush" id="cookBook">
+            <!-- <li class="list-group-item">
 
                 <div class="row">
                     <div class="col-1.5">
@@ -68,35 +66,17 @@
                         <p>50 ฿</p>
                     </div>
                 </div>
+            </li> -->
+        </ul>
 
-            </li>
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-1.5">
-                        <img src="../images/db/ข้าวผัดกุ้ง.jpg" class="rounded food" id="menuImage" alt="ข้าวผัดกุ้ง">
-                    </div>
-                    <div class="col">
-                        <p id="menu">ข้าวผัดกุ้ง</p>
-
-                    </div>
-                    <div class="col-1">
-                        <p>x</p>
-
-                    </div>
-                    <div class="col-1.5">
-                        <p>50 ฿</p>
-                    </div>
-
-                </div>
-
-            </li>
+        <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-6">
-                        <p id="menu">รายการจัดส่งทันที</p>
+                        <!-- <p id="menu">รายการจัดส่งทันที</p> -->
                     </div>
                     <div class="col-4">
-                        <p style="font-size: 18px; text-align: right;">ยอดรวม</p>
+                        <p style="font-size: 20px; text-align: right;">ยอดรวม</p>
                     </div>
                     <div class="col-2">
                         <p style="font-size: 22px; text-align: right;" id="price">120 ฿</p>
@@ -106,7 +86,12 @@
             </li>
 
 
+
         </ul>
+
+
+
+
     </div>
 
     <footer class="footer">
@@ -127,11 +112,62 @@
         </div>
     </footer>
 
-
     <script>
+
+        queryData = localStorage.getItem("queryData")
+        listOrder = localStorage.getItem("listOrder")
+
+        queryData = JSON.parse(queryData)
+        console.log(queryData)
 
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
+        
+        var products = queryData.data.data[0].products
+        var sizeMenu = products.length
+
+        console.log(products)
+
+        for (var i = 0; i < sizeMenu; i++) {
+
+            var unique_id = String(products[i].menuId)
+
+            if (listOrder.includes(unique_id)) {
+
+
+
+                menuRow = document.createElement("li")
+                menuRow.className = "list-group-item";
+                menuRow.innerHTML = `
+
+            
+
+                <div class="row">
+                    <div class="col-1.5">
+                        <img src="${products[i].image}.png" class="rounded food" id="menuImage"
+                            alt="${products[i].name}">
+    </div>
+                        <div class="col">
+                            <p id="menu">${products[i].name}</p>
+                        </div>
+                        <div class="col-1">
+
+                            <p>x</p>
+                        </div>
+                        <div class="col-1.5">
+                            <p>฿${products[i].price}</p>
+                        </div>
+                    </div>
+    `;
+
+                document.getElementById("cookBook").append(menuRow)
+            }
+            // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
+        }
+
+
+
+
         async function main() {
 
             await liff.init({ liffId: "1655215015-V58PdOrL" })
