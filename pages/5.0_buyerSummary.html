@@ -158,7 +158,9 @@
 
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
 
-        var products = queryData.data.data[0].products
+
+        var products = JSON.parse(localStorage.getItem("products"))
+        // var products = queryData.data.data[0].products
         var sizeMenu = products.length
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
 
