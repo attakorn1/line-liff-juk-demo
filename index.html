@@ -187,8 +187,8 @@
         });
 
 
-        sizeMenu = localStorage.getItem("sizeMenu")
-        products = JSON.parse(localStorage.getItem("products"))
+        var sizeMenu = localStorage.getItem("sizeMenu")
+        var products = JSON.parse(localStorage.getItem("products"))
 
         // console.log(products)
 
@@ -228,6 +228,7 @@
             let listOrder = []
             let listNumber = []
             let listprice = []
+
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
                 listNumber.push(String(numOrder))
