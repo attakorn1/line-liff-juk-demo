@@ -223,7 +223,7 @@
         }
 
         function countSumOrder() {
-            let sum = 0
+            // let sum = 0
             let cost = 0
             let listOrder = []
             let listNumber = []
@@ -232,13 +232,13 @@
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
                 listNumber.push(String(numOrder))
-
+                console.log(listNumber)
                 if (numOrder > 0) {
                     cost += numOrder * products[i].price
                     listOrder.push(String(products[i].name))
                     listprice.push(products[i].price)
                 }
-                sum += parseInt(numOrder)
+                // sum += parseInt(numOrder)
 
 
             }
@@ -254,10 +254,10 @@
             localStorage.setItem("listNumber", JSON.stringify(listNumber))
             localStorage.setItem("sumCost", cost)
             
-            console.log(sum)
+            console.log(cost)
 
             if (cost == 0) {
-                localStorage.setItem("sumCost", 0)
+                // localStorage.setItem("sumCost", 0)
                 alert("เลือกเมนูอาหารก่อนนะจ๊ะ")
             }
             else {
