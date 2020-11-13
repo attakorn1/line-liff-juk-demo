@@ -72,14 +72,14 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-4">
                         <!-- <p id="menu">รายการจัดส่งทันที</p> -->
                     </div>
-                    <div class="col-3.5">
+                    <div class="col-5">
                         <p style="font-size: 20px; text-align: right;">ยอดรวม</p>
                     </div>
-                    <div class="col-2.5">
-                        <p style="font-size: 22px; text-align: right;" id="price">120 ฿</p>
+                    <div class="col-3">
+                        <p style="font-size: 22px; text-align: right;" id="price">฿120</p>
                     </div>
                 </div>
 
@@ -109,31 +109,18 @@
 
     <script>
 
-        // var queryData = JSON.parse(localStorage.getItem("queryData"))
+
         var listOrder = localStorage.getItem("listOrder")
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
         var products = JSON.parse(localStorage.getItem("products"))
 
         var mylist = localStorage.getItem("mylist")
 
-        console.log(listOrder)
-        console.log("hello world1")
-        // console.log(JSON.parse(localStorage.getItem("listOrder")))
-        console.log("hello world2")
-        console.log(products)
-        console.log("hello worldb")
-        console.log(products[0].menuId)
-        console.log("hello worldb")
-
-        // queryData = JSON.parse(queryData)
 
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
 
-        // var products = queryData.data.data[0].products
         var sizeMenu = products.length
-
-        // console.log(products)
 
         for (var i = 0; i < sizeMenu; i++) {
 
@@ -170,7 +157,7 @@
             // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
         }
 
-        // console.log(localStorage.getItem("locationHref"))
+
 
         function goBack() {
             // window.history.back();
