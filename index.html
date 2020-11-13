@@ -38,7 +38,8 @@
                         <h1 class="restaurantName" id="topic" style="text-align: left;">ป้าแจ๋ว</h1>
                     </div>
                     <div class="col">
-                        <span class="badge badge-danger" style="margin-top: 10px; font-size: 14px;">เหลือ 1 ชั่วโมง</span>
+                        <span class="badge badge-danger" style="margin-top: 10px; font-size: 14px;">เหลือ 1
+                            ชั่วโมง</span>
                     </div>
                 </div>
                 <div class="row">
@@ -104,144 +105,153 @@
     <script>
 
 
-        var queryData = {
-            "data": {
-                "data": [
-                    {
-                        "account_banking": {
-                            "bank": "kbank",
-                            "firstname": "Thanakorn",
-                            "lastname": "Thipgrathok",
-                            "number": "0502624687"
-                        },
-                        "created_at": 1605093577435,
-                        "group": [
-                            {
-                                "groupId": "C6f2f2d816d8fb70ed25433c67ed23d73",
-                                "status": true
-                            }
-                        ],
-                        "open": {
-                            "day": [
-                                "mon",
-                                "tue",
-                                "wed"
-                            ],
-                            "time": [
-                                "00:00",
-                                "23:55"
-                            ]
-                        },
-                        "order": true,
-                        "preorder": true,
-                        "products": [
-                            {
-                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.jpg?alt=media&token=640c036e-35ae-4cbf-bff3-f29fd0a1e5f9",
-                                "menuId": "1605093577435-00001",
-                                "name": "ข้าวกะเพราหมูกรอบ",
-                                "price": 50,
-                                "status": true
-                            },
-                            {
-                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=37c5811e-d2cf-48dd-ab35-8b9667e23b70",
-                                "menuId": "1605093577435-00002",
-                                "name": "ข้าวผัดกุ้ง",
-                                "price": 50,
-                                "status": true
-                            },
-                            {
-                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%A2%E0%B8%B3%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=c0ad1750-6f7d-4632-b33d-69ed7c3a5498",
-                                "menuId": "1605093577435-00003",
-                                "name": "ต้มยำกุ้ง",
-                                "price": 80,
-                                "status": true
-                            },
-                            {
-                                "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%88%E0%B8%B7%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%B9%E0%B9%89.jpg?alt=media&token=7a49c324-e34d-427c-9a84-d303d44f7378",
-                                "menuId": "1605093577435-00004",
-                                "name": "แกงจืดเต้าหู้",
-                                "price": 70,
-                                "status": true
-                            }
-                        ],
-                        "storeId": "1605093577435",
-                        "storeImage": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/gourmet-burger-scaled.jpg?alt=media&token=b2122426-efcc-49ab-849d-4c9112f71908",
-                        "storeName": "คิวหิวข้าว1",
-                        "total_crap": 35,
-                        "userId": "Ubca3d3c0cdefb9bcc4b09778cbd30b4e"
-                    }
-                ],
-                "status": true
+        // var queryData = {
+        //     "data": {
+        //         "data": [
+        //             {
+        //                 "account_banking": {
+        //                     "bank": "kbank",
+        //                     "firstname": "Thanakorn",
+        //                     "lastname": "Thipgrathok",
+        //                     "number": "0502624687"
+        //                 },
+        //                 "created_at": 1605093577435,
+        //                 "group": [
+        //                     {
+        //                         "groupId": "C6f2f2d816d8fb70ed25433c67ed23d73",
+        //                         "status": true
+        //                     }
+        //                 ],
+        //                 "open": {
+        //                     "day": [
+        //                         "mon",
+        //                         "tue",
+        //                         "wed"
+        //                     ],
+        //                     "time": [
+        //                         "00:00",
+        //                         "23:55"
+        //                     ]
+        //                 },
+        //                 "order": true,
+        //                 "preorder": true,
+        //                 "products": [
+        //                     {
+        //                         "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%81%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%A3%E0%B8%B2%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.jpg?alt=media&token=640c036e-35ae-4cbf-bff3-f29fd0a1e5f9",
+        //                         "menuId": "1605093577435-00001",
+        //                         "name": "ข้าวกะเพราหมูกรอบ",
+        //                         "price": 50,
+        //                         "status": true
+        //                     },
+        //                     {
+        //                         "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=37c5811e-d2cf-48dd-ab35-8b9667e23b70",
+        //                         "menuId": "1605093577435-00002",
+        //                         "name": "ข้าวผัดกุ้ง",
+        //                         "price": 50,
+        //                         "status": true
+        //                     },
+        //                     {
+        //                         "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%A2%E0%B8%B3%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg?alt=media&token=c0ad1750-6f7d-4632-b33d-69ed7c3a5498",
+        //                         "menuId": "1605093577435-00003",
+        //                         "name": "ต้มยำกุ้ง",
+        //                         "price": 80,
+        //                         "status": true
+        //                     },
+        //                     {
+        //                         "image": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/menu%2F%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%88%E0%B8%B7%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%B9%E0%B9%89.jpg?alt=media&token=7a49c324-e34d-427c-9a84-d303d44f7378",
+        //                         "menuId": "1605093577435-00004",
+        //                         "name": "แกงจืดเต้าหู้",
+        //                         "price": 70,
+        //                         "status": true
+        //                     }
+        //                 ],
+        //                 "storeId": "1605093577435",
+        //                 "storeImage": "https://firebasestorage.googleapis.com/v0/b/linehack2020-c1f1f.appspot.com/o/gourmet-burger-scaled.jpg?alt=media&token=b2122426-efcc-49ab-849d-4c9112f71908",
+        //                 "storeName": "คิวหิวข้าว1",
+        //                 "total_crap": 35,
+        //                 "userId": "Ubca3d3c0cdefb9bcc4b09778cbd30b4e"
+        //             }
+        //         ],
+        //         "status": true
+        //     }
+        // };
+
+
+        var queryData = $.ajax({
+            type: "POST",
+            url: "https://linehack-api-j3f2uydk7a-as.a.run.app/get-data",
+            // The key needs to match your method's input parameter (case-sensitive).
+            data: JSON.stringify({ "id": "R5V7V82GwFLT8XSF6XN8", "typeSource": "store" }),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            success: function (data) {
+                console.log(data)
+            },
+            error: function (errMsg) {
+                alert(errMsg);
             }
-        };
-
-        
-        
+        });
 
 
-        if (queryData.data.data[0].status = true) {
+        queryData = data
+                if (queryData.data.data[0].status = true) {
 
-            var products = queryData.data.data[0].products
-            // localStorage.setItem("queryData", products)
+                    var products = queryData.data.data[0].products
+                    // localStorage.setItem("queryData", products)
 
-            localStorage.setItem("queryData",JSON.stringify(queryData))
-            // console.log(localStorage.getItem("queryData"))
+                    localStorage.setItem("queryData", JSON.stringify(queryData))
+                    // console.log(localStorage.getItem("queryData"))
 
-            var sizeMenu = products.length
-            localStorage.setItem("restaurantName", queryData.data.data[0].storeName)
+                    var sizeMenu = products.length
+                    localStorage.setItem("restaurantName", queryData.data.data[0].storeName)
 
-            
-            // console.log(products[0].menuId)
-            // console.log(typeof products[0].menuId)
-            // console.log(queryData.data.data[0].storeName)
-            // document.getElementsByClassName("restaurantName").innerHTML = queryData.data.data[0].storeName
-            document.getElementById("topic").innerHTML = localStorage.getItem("restaurantName")
 
-            for (var i = 0; i < sizeMenu; i++) {
+                    // document.getElementsByClassName("restaurantName").innerHTML = queryData.data.data[0].storeName
+                    document.getElementById("topic").innerHTML = localStorage.getItem("restaurantName")
 
-                var unique_id = String(products[i].menuId).replace("-", "")
-                // console.log(unique_id)
-                // console.log(typeof unique_id)
+                    for (var i = 0; i < sizeMenu; i++) {
 
-                menuRow = document.createElement("li")
-                menuRow.className = "list-group-item";
-                menuRow.innerHTML = `
+                        var unique_id = String(products[i].menuId).replace("-", "")
 
-                <div class="row">
-                    <div class="col-1.5">
-                        <img src="${products[i].image}.png" class="rounded" id="menuImage" alt="${products[i].name}">
+                        menuRow = document.createElement("li")
+                        menuRow.className = "list-group-item";
+                        menuRow.innerHTML = `
+
+    <div class="row">
+        <div class="col-1.5">
+            <img src="${products[i].image}.jpg" class="rounded" id="menuImage" alt="${products[i].name}">
+    </div>
+            <div class="col">
+                <p id="menu">${products[i].name}</p>
+                <p id="price">฿${products[i].price}</p>
+            </div>
+            <div class="col-1.5">
+                <button type="button" class="btn btn-primary orderBttnClass" id="orderBttn-${unique_id}" onclick="addOrder('${unique_id}')">+
+    สั่งเลย</button>
+                <div class="input-group" id="numberAdjust-${unique_id}" style="display:none">
+
+                    <button class="btn adjustBttnClass" type="button" id="adjustBttn"
+                        style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
+                        onclick="decreaseOrder('${unique_id}')">-</button>
+                    <input type="text" class="form-control" placeholder="" aria-label="small"
+                        aria-describedby="basic-addon1" id="numberOfOrder-${unique_id}"
+                        style="font-size: 16px; width: 20px; padding: 0px; text-align: center; font-weight: 700;">
+                        <div class="input-group-prepend" id="inputGroup-sizing-xs">
+
+                        </div>
+                        <button class="btn adjustBttnClass" type="button" id="adjustBttn"
+                            style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
+                            onclick="increaseOrder('${unique_id}')">+</button>
+        </div>
                 </div>
-                        <div class="col">
-                            <p id="menu">${products[i].name}</p>
-                            <p id="price">฿${products[i].price}</p>
-                        </div>
-                        <div class="col-1.5">
-                            <button type="button" class="btn btn-primary orderBttnClass" id="orderBttn-${unique_id}" onclick="addOrder('${unique_id}')">+
-                สั่งเลย</button>
-                            <div class="input-group" id="numberAdjust-${unique_id}" style="display:none">
+            </div>
+    `;
 
-                                <button class="btn adjustBttnClass" type="button" id="adjustBttn"
-                                    style="border-radius: 12px 0px 0px 12px; text-align: right;" id="decreaseOrder"
-                                    onclick="decreaseOrder('${unique_id}')">-</button>
-                                <input type="text" class="form-control" placeholder="" aria-label="small"
-                                    aria-describedby="basic-addon1" id="numberOfOrder-${unique_id}"
-                                    style="font-size: 16px; width: 20px; padding: 0px; text-align: center; font-weight: 700;">
-                                    <div class="input-group-prepend" id="inputGroup-sizing-xs">
+                        document.getElementById("cookBook").append(menuRow)
 
-                                    </div>
-                                    <button class="btn adjustBttnClass" type="button" id="adjustBttn"
-                                        style="border-radius: 0px 12px 12px 0px; text-align: left;" id="increaseOrder"
-                                        onclick="increaseOrder('${unique_id}')">+</button>
-                    </div>
-                            </div>
-                        </div>
-                `;
-
-                document.getElementById("cookBook").append(menuRow)
-
-                // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
-            }
-        }
+                        // document.getElementById("numberAdjust-" + unique_id).style.display = "none"
+                    }
+                }
 
         // document.getElementById("numberAdjust").style.display = "none"
 
@@ -254,8 +264,7 @@
 
 
         function addOrder(unique_id) {
-            // console.log(unique_id)
-            // console.log(typeof unique_id)
+
             document.getElementById("orderBttn-" + String(unique_id)).style.display = "none"
             document.getElementById("numberAdjust-" + unique_id).style.display = "flex"
             document.getElementById("numberOfOrder-" + unique_id).value = 1
@@ -291,9 +300,9 @@
             // console.log(typeof sum)
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
-                
+
                 listNumber.push(String(numOrder))
-                
+
                 if (numOrder > 0) {
                     cost += numOrder * products[i].price
                     // console.log(products[i].price)
@@ -303,7 +312,7 @@
                 sum += parseInt(numOrder)
             }
 
-            console.log(listNumber)
+            // console.log(listNumber)
 
             localStorage.setItem("listOrder", listOrder)
             localStorage.setItem("listNumber", JSON.stringify(listNumber))
