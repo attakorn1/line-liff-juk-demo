@@ -75,10 +75,10 @@
                     <div class="col-6">
                         <!-- <p id="menu">รายการจัดส่งทันที</p> -->
                     </div>
-                    <div class="col-4">
+                    <div class="col-3.5">
                         <p style="font-size: 20px; text-align: right;">ยอดรวม</p>
                     </div>
-                    <div class="col-2">
+                    <div class="col-2.5">
                         <p style="font-size: 22px; text-align: right;" id="price">120 ฿</p>
                     </div>
                 </div>
@@ -114,10 +114,11 @@
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
         var products = JSON.parse(localStorage.getItem("products"))
 
+        var mylist = localStorage.getItem("mylist")
 
         console.log(listOrder)
         console.log("hello world1")
-        console.log(JSON.parse(localStorage.getItem("listOrder")))
+        // console.log(JSON.parse(localStorage.getItem("listOrder")))
         console.log("hello world2")
         console.log(products)
         console.log("hello worldb")
@@ -141,7 +142,7 @@
             console.log(unique_id)
             console.log(listOrder)
 
-            if (listOrder.includes(unique_id)) {
+            if (mylist.includes(unique_id)) {
 
                 menuRow = document.createElement("li")
                 menuRow.className = "list-group-item";

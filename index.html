@@ -231,6 +231,7 @@
             let listOrder = []
             let listNumber = []
             let listprice = []
+            let mylist = []
 
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
@@ -242,6 +243,7 @@
                     cost += numOrder * products[i].price
                     listOrder.push(String(products[i].name))
                     listprice.push(products[i].price)
+                    mylist.push(String(products[i].menuId))
                 }
                 // sum += parseInt(numOrder)
 
@@ -258,7 +260,7 @@
             localStorage.setItem("listOrder", listOrder)
             localStorage.setItem("listNumber", JSON.stringify(listNumber))
             localStorage.setItem("sumCost", cost)
-
+            localStorage.setItem("mylist",mylist)
 
             if (cost == 0) {
                 localStorage.setItem("sumCost", 0)
