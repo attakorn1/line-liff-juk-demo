@@ -113,6 +113,7 @@
         var queryData = localStorage.getItem("queryData")
         var listOrder = localStorage.getItem("listOrder")
         var listNumber = JSON.parse(localStorage.getItem("listNumber"))
+        var products = localStorage.getItem("products")
 
         // console.log(listNumber)
 
@@ -121,10 +122,10 @@
         document.getElementById("topic-second").innerHTML = localStorage.getItem("restaurantName")
         document.getElementById("price").innerHTML = '฿' + localStorage.getItem("sumCost");
 
-        var products = queryData.data.data[0].products
+        // var products = queryData.data.data[0].products
         var sizeMenu = products.length
 
-        console.log(products)
+        // console.log(products)
 
         for (var i = 0; i < sizeMenu; i++) {
 
@@ -137,7 +138,7 @@
                 menuRow.innerHTML = `
                 <div class="row">
                     <div class="col-1.5">
-                        <img src="${products[i].image}.jpg" class="rounded food" id="menuImage"
+                        <img src="${products[i].image}" class="rounded food" id="menuImage"
                             alt="${products[i].name}">
     </div>
                         <div class="col">
@@ -159,7 +160,7 @@
         }
 
         console.log(localStorage.getItem("locationHref"))
-        
+
         function goBack() {
             // window.history.back();
             // document.location='../index.html'

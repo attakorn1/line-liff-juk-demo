@@ -151,7 +151,7 @@
         $("button").click(function(e) {
                 e.preventDefault();
                 let orderData = {"userId": localStorage.getItem("userId"), "paymentMethod": "cod",
-                "order_list": localStorage.getItem("order_list"), 
+                "order_list": JSON.parse(localStorage.getItem("order_list")),
                 "storeId":  localStorage.getItem("storeId"), "createDate": "1605261606487", 
                 "total_price": localStorage.getItem("sumCost"),  "status": "pending",
                 "userContact" : {"name" : nameCus, "tel":phoneCus, "pick_up":placeCus}}
