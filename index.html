@@ -111,10 +111,10 @@
     <script>
         // localStorage.clear();
         const urlParams = new URLSearchParams(window.location.search);
-        // console.log(window.location.href)
         const liffId = urlParams.get('liffId');
         const storeId = urlParams.get('storeId');
         localStorage.setItem("locationHref", window.location.href)
+        console.log(window.location.href)
         localStorage.setItem("storeId", storeId)
         localStorage.setItem("liffId", liffId)
         var queryData
