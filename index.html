@@ -11,10 +11,12 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet"> -->
 
+
+    <script src="./js/vconsole.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script src="./js/index.js"></script>
 
@@ -220,25 +222,25 @@
             let cost = 0
             let listOrder = []
             let listNumber = []
-            let listprice =[]
+            let listprice = []
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
                 listNumber.push(String(numOrder))
-                
+
                 if (numOrder > 0) {
                     cost += numOrder * products[i].price
                     listOrder.push(String(products[i].name))
                     listprice.push(products[i].price)
                 }
                 sum += parseInt(numOrder)
-                
-                
+
+
             }
-            let order_list =[]
+            let order_list = []
             listOrder.forEach((menu_name, index) => {
                 const amount = listNumber[index];
                 const price = listprice[index];
-                order_list.push({"name": menu_name, "amount": amount, "price" : price})
+                order_list.push({ "name": menu_name, "amount": amount, "price": price })
             });
             localStorage.setItem("oder_list", JSON.stringify(order_list))
 
@@ -260,6 +262,14 @@
 
         document.write('<link rel="stylesheet" href="style.css?cache=' + new Date().getTime() + '">')
         document.write('<script defer src="app.js?cache=' + new Date().getTime() + '"><\/script>')
+
+        let vconsole = urlParams.get('vconsole');
+        if (vconsole && vconsole == "1") {
+            var vConsole = new VConsole();
+            console.log('Hello world');
+        }
+
+
         async function main() {
             const urlParams = new URLSearchParams(window.location.search);
             const liffId = urlParams.get('liffId');
