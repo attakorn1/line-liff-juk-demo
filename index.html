@@ -107,7 +107,7 @@
 
 
     <script>
-        localStorage.clear();
+        // localStorage.clear();
         const urlParams = new URLSearchParams(window.location.search);
         const liffId = urlParams.get('liffId');
         const storeId = urlParams.get('storeId');
@@ -123,7 +123,7 @@
             success: function (data) {
                 queryData = data;
                 if (queryData.data.status = true) {
-                    console.log(queryData)
+                    // console.log(queryData)
                     var products = queryData.data.data[0].products
                     localStorage.setItem("products", JSON.stringify(products))
 
@@ -188,10 +188,10 @@
 
 
         var sizeMenu = localStorage.getItem("sizeMenu")
-        // console.log(sizeMenu)
+        console.log(sizeMenu)
         var products = JSON.parse(localStorage.getItem("products"))
 
-        // console.log(products)
+        console.log(products)
 
         function addOrder(unique_id) {
             // console.log(unique_id)
