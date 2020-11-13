@@ -29,16 +29,10 @@
 
     </div>
     <div class="container" style="padding-top:15px;">
-        <div class="container mt=20">
 
-
-
-
-        </div>
 
 
         <div class="container mt=20">
-
             <div class="container mt=20">
                 <div class="row">
                     <div class="col-1.5">
@@ -49,50 +43,65 @@
                     </div>
                 </div>
                 <div class="row">
-                    <p id="topic-second">ยอดรวม 120 ฿</p>
+
+                    <p id="topic-second">ยอดรวม
+
+                    <div class="col">
+                        <p id="sumaPrice" style="font-size: 20px;">120 ฿</p>
+                    </div>
+                    </p>
+
+
+
+
                 </div>
 
-                <div class="row">
-                    <div class="col-3.5">
-                        <p>เลขบัญชี:</p>
-                    </div>
-                    <div class="col" id="bank_acc">
-                        <p>XXX</p>
-                    </div>
-                    <div class="col-2">
+                <div class="container" style="margin-left: -5px;">
+                    <div class="row" text-align: left;">
+                        <div class="col-3.5">
+                            <p>เลขบัญชี:</p>
+                        </div>
+                        <div class="col" id="bank_acc">
+                            <p>XXX</p>
+                        </div>
+                        <div class="col-2">
 
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-3.5">
-                        <p>ธนาคาร:</p>
+                    <div class="row">
+                        <div class="col-3.5">
+                            <p>ธนาคาร:</p>
+                        </div>
+                        <div class="col" id="bank_name">
+                            <p>ธนาคารกสิกรไทย</p>
+                        </div>
                     </div>
-                    <div class="col" id="bank_name">
-                        <p>ธนาคารกสิกรไทย</p>
+                    <div class="row">
+                        <div class="col-3.5">
+                            <p>ชื่อเจ้าของบัญชี:</p>
+                        </div>
+                        <div class="col" id="name">
+                            <p>ชื่อจริง นามสกุล</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-3.5">
-                        <p>ชื่อเจ้าของบัญชี:</p>
-                    </div>
-                    <div class="col" id="name">
-                        <p>ชื่อจริง นามสกุล</p>
-                    </div>
-                </div>
 
-                <div class="row">
-                    <form>
-                        <div class="form-group col-3.5">
+                    <div class="row">
+                        <form>
+                            <div class="form-group col-3.5">
 
                                 <label for="exampleFormControlFile1">เลือก Slip</label>
                             </div>
                             <div class="col">
                                 <input type="file" class="form-control-file" id="exampleFormControlFile1">
 
-                        </div>
-                    </form>
-                </div>
+                            </div>
+                        </form>
+                    </div>
 
+
+
+
+                </div>
             </div>
         </div>
 
@@ -127,7 +136,26 @@
         queryData = localStorage.getItem("queryData")
         queryData = JSON.parse(queryData)
 
+        document.getElementById("sumaPrice").innerHTML = '฿' + localStorage.getItem("sumCost");
+
+        let bank = queryData.data.data[0].account_banking.bank
+        let first_name = queryData.data.data[0].account_banking.firstname
+        let last_name = queryData.data.data[0].account_banking.lastname
+        let number = queryData.data.data[0].account_banking.number
+
+        let name = first_name + "  " + last_name
+
+        document.getElementById("bank_acc").innerHTML = number
+        document.getElementById("bank_name").innerHTML = bank
+        document.getElementById("name").innerHTML = name
+
         console.log(queryData.data.data[0].account_banking)
+        console.log(bank)
+        console.log(first_name)
+        console.log(last_name)
+        console.log(name)
+
+
 
         async function main() {
 

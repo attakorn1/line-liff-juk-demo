@@ -15,7 +15,7 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script src="./js/index.js"></script>
-    
+
     <title>JUK JUK</title>
 </head>
 
@@ -52,20 +52,19 @@
             <form>
                 <div class="form-group">
                     <label for="nameBuyer">ชื่อ</label>
-                    <input type="text" class="form-control" placeholder="ใส่ชื่อเรียก">
-
+                    <input type="text" class="form-control" id="txt_name" placeholder="ใส่ชื่อเรียก">
                 </div>
                 <div class="form-group">
                     <label for="placeBuyer">สถานที่นัดรับ</label>
-                    <input type="text" class="form-control" placeholder="เช่น บ้านเลขที่ หรือ ส่วนกลาง">
+                    <input type="text" class="form-control" id="txt_place" placeholder="เช่น บ้านเลขที่ หรือ ส่วนกลาง">
                 </div>
                 <div class="form-group">
                     <label for="placeBuyer">เบอร์ติดต่อ</label>
-                    <input type="tel" class="form-control" placeholder="012-3456789">
+                    <input type="tel" class="form-control" id="txt_phone" placeholder="012-3456789">
                 </div>
                 <div class="form-group">
                     <label for="placeBuyer">หมายเหตุ</label>
-                    <input type="text" class="form-control" placeholder="ฝากบอกถึงคนขาย">
+                    <input type="text" class="form-control" id="txt_note" placeholder="ฝากบอกถึงคนขาย">
                 </div>
             </form>
 
@@ -85,8 +84,8 @@
                         กลับ </button>
                 </div>
                 <div class="col-9">
-                    <button type="button" class="btn btn-primary" id="footerNextBttn" 
-                    onclick="document.location='./5.0_buyerSummary.html'">ยืนยันสถานที่</button>
+                    <button type="button" class="btn btn-primary" id="footerNextBttn"
+                        onclick="document.location='./5.0_buyerSummary.html'">ยืนยันสถานที่</button>
                 </div>
 
 
@@ -98,6 +97,23 @@
 
 
     <script>
+
+
+        document.getElementById("txt_name").value = 'ฉันเอง'
+        document.getElementById("txt_place").value = 'Lobby'
+        document.getElementById("txt_phone").value = '088-888-8888'
+        document.getElementById("txt_note").value = 'ขออร่อย ๆ นะจ๊ะ'
+
+        localStorage.setItem("nameCus", document.getElementById("txt_name").value)
+        localStorage.setItem("placeCus", document.getElementById("txt_place").value)
+        localStorage.setItem("phoneCus", document.getElementById("txt_phone").value)
+        localStorage.setItem("noteCus", document.getElementById("txt_note").value)
+
+        console.log(localStorage.getItem("nameCus"))
+        console.log(localStorage.getItem("placeCus"))
+        console.log(localStorage.getItem("phoneCus"))
+        console.log(localStorage.getItem("noteCus"))
+
         async function main() {
 
             await liff.init({ liffId: "1655215015-V58PdOrL" })

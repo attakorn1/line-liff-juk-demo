@@ -292,8 +292,8 @@
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
                 if (numOrder > 0) {
                     cost += numOrder * products[i].price
-                    console.log(products[i].price)
-                    console.log(cost)
+                    // console.log(products[i].price)
+                    // console.log(cost)
                     listOrder.push(String(products[i].menuId))
                 }
                 sum += parseInt(numOrder)

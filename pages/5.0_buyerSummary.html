@@ -16,6 +16,14 @@
     <script src="https://static.line-scdn.net/liff/edge/versions/2.5.0/sdk.js"></script>
     <script src="./js/index.js"></script>
 
+<style>
+    p {
+        font-size: 20px;
+        font-weight: 600;
+    }
+</style>
+
+
     <title>JUK JUK</title>
 </head>
 
@@ -63,10 +71,8 @@
                 <li class="list-group-item">
                     <div class="row">
                         <div class="col-1.5">
-
                             <h2>วิธีชำระเงิน</h2>
-
-
+                            <p id="payMethod">วิธี</p>
                         </div>
                     </div>
                 </li>
@@ -78,37 +84,26 @@
                             <form>
                                 <div class="form-group">
                                     <label for="nameBuyer">ชื่อ</label>
-
-
+                                    <p id="nameCus">ชื่อ</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="placeBuyer">สถานที่นัดรับ</label>
-
+                                    <p id="placeCus">สถานที่</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="placeBuyer">เบอร์ติดต่อ</label>
-
+                                    <p id="phoneCus">เบอร์</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="placeBuyer">หมายเหตุ</label>
-
+                                    <p id="noteCus">หมายเหตุ</p>
                                 </div>
                             </form>
-
                         </div>
                     </div>
-
                 </li>
-
-
-
             </ul>
-
-
-
-
         </div>
-
     </div>
 
 
@@ -131,6 +126,24 @@
 
 
     <script>
+
+        let paymentMethod = localStorage.getItem("paymentMethod")
+
+        if (paymentMethod == 'meet') {
+            document.getElementById("payMethod").innerHTML = 'จ่ายด้วยเงินสดหรือสแกน QR Code ที่สถานที่นัดหมาย'
+        } else {
+            document.getElementById("payMethod").innerHTML = 'โอนเงินและส่ง Slip ทันที'
+        }
+
+        let nameCus = localStorage.getItem("nameCus")
+        let placeCus = localStorage.getItem("placeCus")
+        let phoneCus = localStorage.getItem("phoneCus")
+        let noteCus = localStorage.getItem("noteCus")
+
+        document.getElementById("nameCus").innerHTML = nameCus
+        document.getElementById("placeCus").innerHTML = placeCus
+        document.getElementById("phoneCus").innerHTML = phoneCus
+        document.getElementById("noteCus").innerHTML = noteCus
 
         function closed() {
             liff.closeWindow()
