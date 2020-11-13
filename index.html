@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300" rel="stylesheet"> -->
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.4/vconsole.min.js" integrity="sha512-/9dW/D2rWkAaLlyBbFEY50QbnpNP97+j2G9X/8A44xVTvEwYe8jUK3TEANhUbZ3Avr8UDIbcI8zHowc3ibGD+A==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.4/vconsole.min.js"
+        integrity="sha512-/9dW/D2rWkAaLlyBbFEY50QbnpNP97+j2G9X/8A44xVTvEwYe8jUK3TEANhUbZ3Avr8UDIbcI8zHowc3ibGD+A=="
+        crossorigin="anonymous"></script>
     <!-- <script src="./js/vconsole.min.js"></script> -->
     <script>
-      var vConsole = new VConsole()
-      console.log("Hello World!")
+        var vConsole = new VConsole()
+        console.log("Hello World!")
     </script>
-    
-    
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
@@ -109,6 +111,7 @@
     <script>
         // localStorage.clear();
         const urlParams = new URLSearchParams(window.location.search);
+        console.log(urlParams)
         const liffId = urlParams.get('liffId');
         const storeId = urlParams.get('storeId');
         localStorage.setItem("storeId", storeId)
@@ -123,7 +126,7 @@
             success: function (data) {
                 queryData = data;
                 if (queryData.data.status = true) {
-                    // console.log(queryData)
+
                     var products = queryData.data.data[0].products
                     localStorage.setItem("products", JSON.stringify(products))
 
@@ -188,14 +191,11 @@
 
 
         var sizeMenu = localStorage.getItem("sizeMenu")
-        console.log(sizeMenu)
         var products = JSON.parse(localStorage.getItem("products"))
 
-        console.log(products)
 
         function addOrder(unique_id) {
-            // console.log(unique_id)
-            // console.log(typeof unique_id)
+
             document.getElementById("orderBttn-" + String(unique_id)).style.display = "none"
             document.getElementById("numberAdjust-" + unique_id).style.display = "flex"
             document.getElementById("numberOfOrder-" + unique_id).value = 1
@@ -224,18 +224,18 @@
         }
 
         function countSumOrder() {
-            // let sum = 0
+
             let cost = 0
             let listOrder = []
             let listNumber = []
             let listprice = []
-            // console.log(cost)
+
             for (var i = 0; i < sizeMenu; i++) {
                 let numOrder = +document.getElementById("numberOfOrder-" + String(products[i].menuId).replace("-", "")).value
                 console.log(products[0].menuId)
-                // console.log(numOrder)
+
                 listNumber.push(String(numOrder))
-                // console.log(listNumber)
+
                 if (numOrder > 0) {
                     cost += numOrder * products[i].price
                     listOrder.push(String(products[i].name))
@@ -256,11 +256,10 @@
             localStorage.setItem("listOrder", listOrder)
             localStorage.setItem("listNumber", JSON.stringify(listNumber))
             localStorage.setItem("sumCost", cost)
-            
-            // console.log(cost)
+
 
             if (cost == 0) {
-                // localStorage.setItem("sumCost", 0)
+                localStorage.setItem("sumCost", 0)
                 alert("เลือกเมนูอาหารก่อนนะจ๊ะ")
             }
             else {
