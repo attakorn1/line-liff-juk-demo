@@ -171,9 +171,7 @@
         // }
 
         async function main() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const liffId = urlParams.get('liffId');
-            await liff.init({ liffId: liffId })
+            await liff.init({ liffId: localStorage.getItem("liffId")})
 
         }
 

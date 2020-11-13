@@ -115,6 +115,7 @@
         const liffId = urlParams.get('liffId');
         const storeId = urlParams.get('storeId');
         localStorage.setItem("storeId", storeId)
+        localStorage.setItem("liffId", liffId)
         var queryData
         $.ajax({
             type: "POST",
