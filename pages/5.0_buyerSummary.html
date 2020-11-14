@@ -220,8 +220,30 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
+                    
+                    $.ajax({
+                        url: "https://linehack-j3f2uydk7a-as.a.run.app/notify",
+                        type: "POST",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        data: JSON.stringify({
+                            "typeSource": "user",
+                            "userId": localStorage.getItem("seller_id"),
+                            "message": "มีออเดอร์เข้าครับบบ https://liff.line.me/1655215015-V58PdOrL?vconsole=1",
+                            "type": "message"
+                        }),
+                        dataType: 'json',
+                        error: function (data) {
+                            console.log("upload error", data);
+                            console.log(data.getAllResponseHeaders());
+                        },
+                        success: function (data) {
+                            closed();
+                        }
+                    })
+                    
                     alert('สั่งซื้อสำเร็จ');
-                    closed()
                 },
                 error: function (result) {
                     alert('error');
